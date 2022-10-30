@@ -27,20 +27,55 @@ public class MainWindow extends JFrame implements ActionListener{
     }
     
     private void initWindow(){
-        setSize(960, 540);
-        setVisible(true);
-        setLocationRelativeTo(null);
-        setResizable(false);
+        JFrame frame = new JFrame();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("memorabble");
+        frame.setTitle("memorabble");
+        frame.getContentPane();
+        frame.setLayout(new GridBagLayout());
+        GridBagConstraints c =  new GridBagConstraints();
+        lblTitulo = new JLabel("MEMORABBLE");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 100;
+        c.weightx = 0.0;
+        c.gridwidth = 3;
+        c.gridx = 1;
+        c.gridy = 0;
+        frame.add(lblTitulo, c);
         
-        Container container = getContentPane();
-        JPanel panel = new JPanel();
-        panel.setSize(200,200);
-        container.add(panel);
+        btnComoJugar = new JButton("COMO JUGAR");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 0;
+        c.ipadx = 20;
+        c.weightx = 0.0;
+        c.gridwidth = 1;
+        c.gridx = 0;
+        c.gridy = 1;
+        frame.add(btnComoJugar, c);
+        
+        btnJugar = new JButton("JUGAR");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 0;
+        c.ipadx = 20;
+        c.weightx = 0.0;
+        c.gridwidth = 1;
+        c.gridx = 1;
+        c.gridy = 1;
+        frame.add(btnJugar, c);
+        
+        btnParaQueSirve = new JButton("PARA QUE SIRVE");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 0;
+        c.ipadx = 20;
+        c.weightx = 0.0;
+        c.gridwidth = 1;
+        c.gridx = 2;
+        c.gridy = 1;
+        frame.add(btnParaQueSirve, c);
+        
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
-    
-    
     
     @Override
     public void actionPerformed(ActionEvent e) {
