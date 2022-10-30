@@ -15,18 +15,18 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 
 
-public class MainWindow extends JFrame implements ActionListener{
+public class VentanaInicio extends JFrame implements ActionListener{
 
     private JButton btnJugar;
     private JButton btnComoJugar;
     private JButton btnParaQueSirve;
     private JLabel lblTitulo;
     
-    public MainWindow(){
-        initWindow();
+    public VentanaInicio(){
+        iniciarComponentes();
     }
     
-    private void initWindow(){
+    private void iniciarComponentes(){
         JFrame frame = new JFrame();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("memorabble");
@@ -43,6 +43,8 @@ public class MainWindow extends JFrame implements ActionListener{
         frame.add(lblTitulo, c);
         
         btnComoJugar = new JButton("COMO JUGAR");
+        Color color = new Color(0,0,0);
+        btnComoJugar.setBackground(color);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 0;
         c.ipadx = 20;
@@ -75,6 +77,19 @@ public class MainWindow extends JFrame implements ActionListener{
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        
+    }
+    
+    private void abrirVentanaDatos(){
+        
+    }
+    
+    private void abrirVentanaComoJugar(){
+        
+    }
+    
+    private void abrirVentanaParaQueSirve(){
+        
     }
     
     @Override

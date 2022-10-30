@@ -9,10 +9,10 @@ package test;
  * @author Jhonnier Hernandez
  */
 
-import vista.MainWindow;
+import vista.VentanaInicio;
 
-public class Test {
+public class Principal {
     public static void main(String[] args) {
-        MainWindow ventana = new MainWindow();
+        VentanaInicio ventana = new VentanaInicio();
     }
 }
