@@ -21,47 +21,28 @@ public class VentanaDatos extends JFrame implements ActionListener{
     }
     
     private void iniciarComponentes(){
-        JFrame frame = new JFrame();
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setTitle("DATOS");
-        frame.getContentPane();
-        frame.setLayout(new GridBagLayout());
-        GridBagConstraints c =  new GridBagConstraints();
+        setTitle("DATOS");
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
+        setSize(300,300);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setResizable(false);
+        setLayout(null);
         
-        JLabel nombre = new JLabel("INGRESE SU NOMBRE");
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.ipady = 200;
-        c.ipadx = 100;
-        c.weightx = 0.0;
-        c.gridwidth = 3;
-        c.gridx = 1;
-        c.gridy = 0;
-        nombre.setAlignmentX(MAXIMIZED_HORIZ);
-        frame.add(nombre,c);
-        
-        JTextField textoNombre = new JTextField();
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.ipady = 0;
-        c.weightx = 0.0;
-        c.gridwidth = 1;
-        c.gridx = 1;
-        c.gridy = 1;
-        c.insets = new Insets(10,10,10,10);
-        frame.add(textoNombre,c);
-        
+        JLabel lblNombre = new JLabel("INGRESE SU NOMBRE");
+        JTextField txtNombre = new JTextField(30);
         JButton btnOk = new JButton("OK");
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.ipady = 0;
-        c.weightx = 0.0;
-        c.gridwidth = 1;
-        c.gridx = 1;
-        c.gridy = 2;
-        c.insets = new Insets(10,10,10,10);
-        frame.add(btnOk,c);
         
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        Container contenedor = getContentPane();
+        contenedor.setLayout(null);
+        
+        lblNombre.setBounds(90, 70, 200, 20);
+        txtNombre.setBounds(100, 100, 100, 30);
+        btnOk.setBounds(110, 140, 70, 40);
+        
+        contenedor.add(lblNombre);
+        contenedor.add(txtNombre);
+        contenedor.add(btnOk);
     }
     
     private void iniciarJuego(){

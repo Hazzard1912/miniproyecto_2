@@ -19,6 +19,7 @@ import java.awt.event.MouseListener;
 public class VentanaComoJugar extends JFrame implements ActionListener{
     private JButton btnOk;
     private JButton btnSiguiente;
+    private JLabel background;
     int contador = 1;
     
     
@@ -28,7 +29,7 @@ public class VentanaComoJugar extends JFrame implements ActionListener{
     
     private void iniciarComponentes(){
         setTitle("COMO JUGAR");
-        setSize(1280,700);
+        setSize(1310,700);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         getRootPane().setWindowDecorationStyle(JRootPane.NONE);
@@ -36,7 +37,7 @@ public class VentanaComoJugar extends JFrame implements ActionListener{
         setVisible(true);
         
         setLayout(new BorderLayout());
-        JLabel background = new JLabel(new ImageIcon("C:\\Users\\PC\\Desktop\\ProyectosGUIS\\miniproyecto_2\\Miniproyecto_2\\imagenes\\ventanaParaQueSirve\\imgParaQueSirve.png"));
+        background = new JLabel(new ImageIcon("C:\\Users\\PC\\Desktop\\ProyectosGUIS\\miniproyecto_2\\Miniproyecto_2\\imagenes\\ventanaComoJugar\\pagina1.png"));
         add(background);
         background.setLayout(new BorderLayout());
         btnOk = new JButton("OK");
@@ -44,6 +45,7 @@ public class VentanaComoJugar extends JFrame implements ActionListener{
         background.add(btnOk, BorderLayout.SOUTH);
         
         btnSiguiente = new JButton("Siguiente");
+        btnSiguiente.setSize(30, HEIGHT);
         btnSiguiente.addActionListener(this);
         btnSiguiente.addMouseListener(new MouseManager());
         background.add(btnSiguiente, BorderLayout.LINE_END);
@@ -51,12 +53,7 @@ public class VentanaComoJugar extends JFrame implements ActionListener{
     }
     
     private void cambiarPagina(int numeroPagina){
-        switch(numeroPagina){
-            case 2 -> System.out.println("pagina 2 se debe desplegar");
-            case 3 -> System.out.println("pagina 3 se debe desplegar");
-            case 4 -> System.out.println("pagina 4 se debe desplegar");
-            case 5 -> System.out.println("pagina 5 se debe desplegar");
-        }
+        
     }
     
     @Override
