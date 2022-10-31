@@ -43,8 +43,7 @@ public class VentanaInicio extends JFrame implements ActionListener{
         frame.add(lblTitulo, c);
         
         btnComoJugar = new JButton("COMO JUGAR");
-        Color color = new Color(0,0,0);
-        btnComoJugar.setBackground(color);
+        btnComoJugar.addActionListener(this);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 0;
         c.ipadx = 20;
@@ -55,6 +54,7 @@ public class VentanaInicio extends JFrame implements ActionListener{
         frame.add(btnComoJugar, c);
         
         btnJugar = new JButton("JUGAR");
+        btnJugar.addActionListener(this);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 0;
         c.ipadx = 20;
@@ -65,6 +65,7 @@ public class VentanaInicio extends JFrame implements ActionListener{
         frame.add(btnJugar, c);
         
         btnParaQueSirve = new JButton("PARA QUE SIRVE");
+        btnParaQueSirve.addActionListener(this);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 0;
         c.ipadx = 20;
@@ -81,19 +82,28 @@ public class VentanaInicio extends JFrame implements ActionListener{
     }
     
     private void abrirVentanaDatos(){
-        
+        VentanaDatos ventanaDatos = new VentanaDatos();
     }
     
     private void abrirVentanaComoJugar(){
-        
+        VentanaComoJugar ventanaComoJugar = new VentanaComoJugar();
     }
     
     private void abrirVentanaParaQueSirve(){
-        
+        VentanaParaQueSirve ventanaParaQueSirve = new VentanaParaQueSirve();
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == btnComoJugar){
+            abrirVentanaComoJugar();
+        }
+        else if(e.getSource() == btnJugar){
+            abrirVentanaDatos();
+        }
+        else if(e.getSource() == btnParaQueSirve){
+            abrirVentanaParaQueSirve();
+        }
     }
     
 }
