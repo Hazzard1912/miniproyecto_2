@@ -6,7 +6,7 @@ package test;
 
 /**
  *
- * @author Jhonnier Hernandez
+ * @author Jhonnier Hernandez, Juan Cifuentes
  */
 
 import vista.VentanaInicio;
