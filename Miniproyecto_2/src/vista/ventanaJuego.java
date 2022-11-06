@@ -5,6 +5,8 @@
 package vista;
 
 import actores.*;
+import java.awt.Color;
+import javax.swing.Timer;
 
 /**
  *
@@ -15,9 +17,9 @@ public class ventanaJuego extends javax.swing.JFrame {
     /**
      * Creates new form ventanaJuego
      */
-    
-    Ronda ronda = new Ronda();
-    Jugador jugador = new Jugador("Jhonnier");
+    private int countdown = 3000;
+    private Ronda ronda = new Ronda();
+    private Jugador jugador = new Jugador("Jhonnier");
     
     public ventanaJuego() {
         initComponents();
@@ -56,7 +58,13 @@ public class ventanaJuego extends javax.swing.JFrame {
         getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 310, 40));
 
         lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
-        lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png"))); // NOI18N
+        lblFicha1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha1.setDisabledIcon(null);
+        lblFicha1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha1MouseClicked(evt);
+            }
+        });
         getContentPane().add(lblFicha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 60, 100, 170));
 
         lblFicha2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/cuadrado.png"))); // NOI18N
@@ -77,6 +85,19 @@ public class ventanaJuego extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
+        // TODO add your handling code here:
+//        Timer timer = new Timer(countdown, null);
+//        timer.start();
+//        if(timer.isRunning()){
+//            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
+//        }
+//        else{
+//            lblFicha1.setIcon(null);
+//        }
+        System.out.println("Label clickeado");
+    }//GEN-LAST:event_lblFicha1MouseClicked
 
     /**
      * @param args the command line arguments
