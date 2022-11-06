@@ -9,7 +9,7 @@ package actores;
  * @author Jhonnier Hernandez
  */
 public class Jugador {
-    private String nombre;
+    private String nombre = "Jhonnier";
     private int vidas;
     
     public Jugador(){
