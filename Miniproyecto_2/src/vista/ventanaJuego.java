@@ -12,7 +12,9 @@ import javax.swing.Timer;
 
 /**
  *
- * @author PC
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
  */
 public class ventanaJuego extends javax.swing.JFrame {
     
