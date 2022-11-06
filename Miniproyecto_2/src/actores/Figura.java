@@ -8,6 +8,7 @@ package actores;
  *
  * @authors:
  * Jhonnier Hernandez
+ * Juan Cifuentes
  */
 public class Figura {
     private String forma;

@@ -6,7 +6,9 @@ package actores;
 
 /**
  *
- * @author Jhonnier Hernandez
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
  */
 
 public class Ronda {
