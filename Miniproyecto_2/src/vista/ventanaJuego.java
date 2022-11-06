@@ -6,6 +6,8 @@ package vista;
 
 import actores.*;
 import java.awt.Color;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
 /**
@@ -20,6 +22,9 @@ public class ventanaJuego extends javax.swing.JFrame {
     private int countdown = 3000;
     private Ronda ronda = new Ronda();
     private Jugador jugador = new Jugador("Jhonnier");
+    static int contador = 0;
+    
+    private Icon iconoFichaBuscar;
     
     public ventanaJuego() {
         initComponents();
@@ -88,17 +93,29 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-//        Timer timer = new Timer(countdown, null);
-//        timer.start();
-//        if(timer.isRunning()){
-//            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
-//        }
-//        else{
-//            lblFicha1.setIcon(null);
-//        }
+        contador++;
+        if(contador % 2 == 0){
+            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
+        }
+        else{
+        lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png")));
+        }
+        String icono = lblFicha1.getIcon().toString();
+        System.out.println("icono = " + icono);
+        String iconoComparar = lblFichaReto.getIcon().toString();
+        System.out.println("iconoComparar = " + iconoComparar);
+        if(icono.equals(iconoComparar)){
+            System.out.println("Fallaste!");
+        }else{
+            System.out.println("Acertaste!");
+        }
         System.out.println("Label clickeado");
+        
     }//GEN-LAST:event_lblFicha1MouseClicked
-
+    
+    private void setIconoABuscar(){
+        iconoFichaBuscar = lblFichaReto.getIcon();
+    }
     /**
      * @param args the command line arguments
      */
