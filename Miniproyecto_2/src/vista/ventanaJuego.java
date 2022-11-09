@@ -100,16 +100,16 @@ public class ventanaJuego extends javax.swing.JFrame {
             lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
         }
         else{
-        lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png")));
+            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png")));
         }
         String icono = lblFicha1.getIcon().toString();
         System.out.println("icono = " + icono);
         String iconoComparar = lblFichaReto.getIcon().toString();
         System.out.println("iconoComparar = " + iconoComparar);
         if(icono.equals(iconoComparar)){
-            System.out.println("Fallaste!");
-        }else{
             System.out.println("Acertaste!");
+        }else{
+            System.out.println("Fallaste!");
         }
         System.out.println("Label clickeado");
         
