@@ -11,13 +11,19 @@ package actores;
  * Juan Cifuentes
  */
 public class Figura {
+    private String[] vector_de_imagenes = new String[3];
+    private String ruta_de_la_imagen;
+    private int numero_de_la_imagen;
     private String forma;
     private String color;
     
-    
-    public Figura(String forma, String color){
-        this.forma = forma;
-        this.color = color;
+    //public Figura(String forma, String color){
+    public Figura(){
+//        this.forma = forma;
+  //      this.color = color;
+        vector_de_imagenes[0] = "/imagenes/figuras/circulo.png";
+        vector_de_imagenes[1] = "/imagenes/figuras/cuadrado.png";
+        vector_de_imagenes[2] = "/imagenes/figuras/triangulo.png";
     }
 
     public String getForma() {
@@ -36,4 +42,13 @@ public class Figura {
         this.color = color;
     }
     
+    public void setRuta(javax.swing.JLabel un_label) {
+        numero_de_la_imagen = (int) (Math.random()*3);
+        ruta_de_la_imagen = vector_de_imagenes[numero_de_la_imagen];
+        un_label.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta_de_la_imagen)));
+    }
+    
+//    public String getRuta(String color) {
+  //      setRuta();
+    //}
 }

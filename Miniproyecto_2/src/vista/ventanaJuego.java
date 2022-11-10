@@ -26,10 +26,14 @@ public class ventanaJuego extends javax.swing.JFrame {
     private Jugador jugador = new Jugador("Jhonnier");
     static int contador = 0;
     
+    private Figura figuras;
+    
     private Icon iconoFichaBuscar;
     
     public ventanaJuego() {
         initComponents();
+        //figuras = new Figura("XD","XD");
+        figuras = new Figura();
     }
 
     /**
@@ -97,10 +101,12 @@ public class ventanaJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
         contador++;
         if(contador % 2 == 0){
-            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
+            figuras.setRuta(lblFicha1);
+//            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
         }
         else{
-            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png")));
+            figuras.setRuta(lblFicha1);
+//            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png")));
         }
         String icono = lblFicha1.getIcon().toString();
         System.out.println("icono = " + icono);
