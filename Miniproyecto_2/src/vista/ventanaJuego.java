@@ -24,16 +24,28 @@ public class ventanaJuego extends javax.swing.JFrame {
     private int countdown = 3000;
     private Ronda ronda = new Ronda();
     private Jugador jugador = new Jugador("Jhonnier");
-    static int contador = 0;
+    private boolean primer_vistazo;
     
-    private Figura figuras;
+    private Figura figura1;
+    private Figura figura2;
+    private Figura figura3;
+    
+    private Figura figura_a_encontrar;
     
     private Icon iconoFichaBuscar;
     
     public ventanaJuego() {
         initComponents();
-        //figuras = new Figura("XD","XD");
-        figuras = new Figura();
+        primer_vistazo = true;
+        
+        figura_a_encontrar = new Figura();
+        figura1 = new Figura();
+        figura2 = new Figura();
+        figura3 = new Figura();
+        
+        figura1.setRutaTo(lblFicha1);
+        figura2.setRutaTo(lblFicha2);
+        figura3.setRutaTo(lblFicha3);
     }
 
     /**
@@ -70,7 +82,6 @@ public class ventanaJuego extends javax.swing.JFrame {
 
         lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
         lblFicha1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblFicha1.setDisabledIcon(null);
         lblFicha1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblFicha1MouseClicked(evt);
@@ -78,13 +89,21 @@ public class ventanaJuego extends javax.swing.JFrame {
         });
         getContentPane().add(lblFicha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 60, 100, 170));
 
-        lblFicha2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/cuadrado.png"))); // NOI18N
+        lblFicha2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha2MouseClicked(evt);
+            }
+        });
         getContentPane().add(lblFicha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 100, 170));
 
-        lblFicha3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png"))); // NOI18N
+        lblFicha3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha3MouseClicked(evt);
+            }
+        });
         getContentPane().add(lblFicha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 60, 100, 170));
-
-        lblFichaReto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png"))); // NOI18N
         getContentPane().add(lblFichaReto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, 100, 170));
 
         contenedorPpal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,27 +118,72 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        contador++;
-        if(contador % 2 == 0){
-            figuras.setRuta(lblFicha1);
-//            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/circulo.png")));
+        if(primer_vistazo == true){
+            primer_vistazo = false;
+            figura_a_encontrar.setRutaTo(lblFichaReto);
+            lblFicha1.setIcon(null);
+            lblFicha2.setIcon(null);
+            lblFicha3.setIcon(null);
         }
         else{
-            figuras.setRuta(lblFicha1);
-//            lblFicha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/figuras/triangulo.png")));
+            figura1.setRutaTo(lblFicha1);
+            String icono = figura1.getRuta();
+            String iconoComparar = figura_a_encontrar.getRuta();
+            if(icono.equals(iconoComparar)){
+                System.out.println("Acertaste!");
+            }else{
+                System.out.println("Fallaste!");
+            }
+            System.out.println("icono = " + icono);
+            System.out.println("iconoComparar = " + iconoComparar);
         }
-        String icono = lblFicha1.getIcon().toString();
-        System.out.println("icono = " + icono);
-        String iconoComparar = lblFichaReto.getIcon().toString();
-        System.out.println("iconoComparar = " + iconoComparar);
-        if(icono.equals(iconoComparar)){
-            System.out.println("Acertaste!");
-        }else{
-            System.out.println("Fallaste!");
-        }
-        System.out.println("Label clickeado");
-        
     }//GEN-LAST:event_lblFicha1MouseClicked
+
+    private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
+        // TODO add your handling code here:
+        if(primer_vistazo == true){
+            primer_vistazo = false;
+            figura_a_encontrar.setRutaTo(lblFichaReto);
+            lblFicha1.setIcon(null);
+            lblFicha2.setIcon(null);
+            lblFicha3.setIcon(null);
+        }
+        else{
+            figura2.setRutaTo(lblFicha2);
+            String icono = figura2.getRuta();
+            String iconoComparar = figura_a_encontrar.getRuta();
+            if(icono.equals(iconoComparar)){
+                System.out.println("Acertaste!");
+            }else{
+                System.out.println("Fallaste!");
+            }
+            System.out.println("icono = " + icono);
+            System.out.println("iconoComparar = " + iconoComparar);
+        }
+    }//GEN-LAST:event_lblFicha2MouseClicked
+
+    private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
+        // TODO add your handling code here:
+        if(primer_vistazo == true){
+            primer_vistazo = false;
+            figura_a_encontrar.setRutaTo(lblFichaReto);
+            lblFicha1.setIcon(null);
+            lblFicha2.setIcon(null);
+            lblFicha3.setIcon(null);
+        }
+        else{
+            figura3.setRutaTo(lblFicha3);
+            String icono = figura3.getRuta();
+            String iconoComparar = figura_a_encontrar.getRuta();
+            if(icono.equals(iconoComparar)){
+                System.out.println("Acertaste!");
+            }else{
+                System.out.println("Fallaste!");
+            }
+            System.out.println("icono = " + icono);
+            System.out.println("iconoComparar = " + iconoComparar);
+        }
+    }//GEN-LAST:event_lblFicha3MouseClicked
     
     private void setIconoABuscar(){
         iconoFichaBuscar = lblFichaReto.getIcon();

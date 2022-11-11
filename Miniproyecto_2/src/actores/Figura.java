@@ -16,6 +16,7 @@ public class Figura {
     private int numero_de_la_imagen;
     private String forma;
     private String color;
+    private boolean primer_set;
     
     //public Figura(String forma, String color){
     public Figura(){
@@ -24,6 +25,7 @@ public class Figura {
         vector_de_imagenes[0] = "/imagenes/figuras/circulo.png";
         vector_de_imagenes[1] = "/imagenes/figuras/cuadrado.png";
         vector_de_imagenes[2] = "/imagenes/figuras/triangulo.png";
+        primer_set = true;
     }
 
     public String getForma() {
@@ -42,9 +44,24 @@ public class Figura {
         this.color = color;
     }
     
-    public void setRuta(javax.swing.JLabel un_label) {
+    public void setRuta() {
+        if (primer_set == true) {
+            primer_set = false;
+        }
         numero_de_la_imagen = (int) (Math.random()*3);
         ruta_de_la_imagen = vector_de_imagenes[numero_de_la_imagen];
+    }
+    
+    public String getRuta() {
+        return ruta_de_la_imagen = vector_de_imagenes[numero_de_la_imagen];
+    }
+    
+    public void setRutaTo(javax.swing.JLabel un_label) {
+        if (primer_set == true) {
+            primer_set = false;
+            numero_de_la_imagen = (int) (Math.random()*3);
+            ruta_de_la_imagen = vector_de_imagenes[numero_de_la_imagen];
+        }
         un_label.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta_de_la_imagen)));
     }
     
