@@ -11,11 +11,11 @@ package actores;
  * Juan Cifuentes
  */
 public class Jugador {
-    private String nombre = "Jhonnier";
+    private String nombre;
     private int vidas;
     
     public Jugador(){
-        nombre = "None";
+        nombre = "Jugador";
         vidas = 3;
     }
     

@@ -20,55 +20,58 @@ public class ventanaJuego extends javax.swing.JFrame {
     /**
      * Creates new form ventanaJuego
      */
-    private int countdown = 5;
-    private Ronda ronda = new Ronda();
-    private Jugador jugador = new Jugador("Jhonnier");
-    
-    private boolean contador_contando;
-    
+    private Ronda ronda;
+    private Jugador jugador;
+
+    private Figura figura_a_encontrar;
     private Figura figura1;
     private Figura figura2;
     private Figura figura3;
     
-    private Figura figura_a_encontrar;
-    
-    private Timer contador;
     private int segundos;
+    private Timer contador;
+    private boolean contador_iniciado; 
+    
+    private JuegoMemorable juego;
+    
+    private boolean final_de_ronda;
     
     public ventanaJuego() {
-        initComponents();
-        contador_contando = false;
-        
-        segundos = 0;
-        
-        contador = new Timer (1000, new ActionListener ()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                // Aquí el código que queramos ejecutar.
-                segundos++;
-                System.out.println(segundos);
-                lblContador.setText("|"+segundos);
-                if (segundos == countdown)
-                {
-                    contador.stop();
-                    lblFicha1.setIcon(null);
-                    lblFicha2.setIcon(null);
-                    lblFicha3.setIcon(null);
-                    figura_a_encontrar.setRutaTo(lblFichaReto);
-                }
-            }
-        });
+        ronda = new Ronda();
+        jugador = new Jugador();
         
         figura_a_encontrar = new Figura();
         figura1 = new Figura();
         figura2 = new Figura();
         figura3 = new Figura();
         
-//        figura1.setRutaTo(lblFicha1);
-  //      figura2.setRutaTo(lblFicha2);
-    //    figura3.setRutaTo(lblFicha3);
+        segundos = 5;
+        contador = new Timer (1000, new ActionListener ()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                // Aquí el código que queramos ejecutar.
+                segundos--;
+                System.out.println(segundos);
+                lblContador.setText("|"+segundos);
+                if (segundos == 0)
+                {
+                    contador.stop();
+                    lblFicha1.setIcon(null);
+                    lblFicha2.setIcon(null);
+                    lblFicha3.setIcon(null);
+                    figura_a_encontrar.setRutaTo(lblFichaReto);
+                    juego.iniciarRonda(figura1, figura2, figura3, figura_a_encontrar);
+                }
+            }
+        });
+        contador_iniciado = false;
         
+        juego = new JuegoMemorable(jugador);
+        
+        final_de_ronda = false;
+        
+        initComponents();
     }
 
     /**
@@ -106,7 +109,7 @@ public class ventanaJuego extends javax.swing.JFrame {
 
         lblContador.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         lblContador.setForeground(new java.awt.Color(255, 0, 0));
-        lblContador.setText("|");
+        lblContador.setText("|"+segundos);
         getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, 40));
 
         lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
@@ -147,8 +150,8 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        if(contador_contando == false){
-            contador_contando = true;
+        if(contador_iniciado == false){
+            contador_iniciado = true;
             figura1.setRutaTo(lblFicha1);
             figura2.setRutaTo(lblFicha2);
             figura3.setRutaTo(lblFicha3);
@@ -165,13 +168,18 @@ public class ventanaJuego extends javax.swing.JFrame {
             }
             System.out.println("icono = " + icono);
             System.out.println("iconoComparar = " + iconoComparar);
+            
+            final_de_ronda = juego.todasLasFichasSeleccionadas(figura1);
+            if (final_de_ronda == true){
+                otraRonda();
+            }
         }
     }//GEN-LAST:event_lblFicha1MouseClicked
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
         // TODO add your handling code here:
-        if(contador_contando == false){
-            contador_contando = true;
+        if(contador_iniciado == false){
+            contador_iniciado = true;
             figura1.setRutaTo(lblFicha1);
             figura2.setRutaTo(lblFicha2);
             figura3.setRutaTo(lblFicha3);
@@ -188,13 +196,19 @@ public class ventanaJuego extends javax.swing.JFrame {
             }
             System.out.println("icono = " + icono);
             System.out.println("iconoComparar = " + iconoComparar);
+            
+            final_de_ronda = juego.todasLasFichasSeleccionadas(figura2);
+            if (final_de_ronda == true){
+                System.out.println("Juego Terminado");
+                otraRonda();
+            }
         }
     }//GEN-LAST:event_lblFicha2MouseClicked
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
         // TODO add your handling code here:
-        if(contador_contando == false){
-             contador_contando = true;
+        if(contador_iniciado == false){
+             contador_iniciado = true;
             figura1.setRutaTo(lblFicha1);
             figura2.setRutaTo(lblFicha2);
             figura3.setRutaTo(lblFicha3);
@@ -211,9 +225,27 @@ public class ventanaJuego extends javax.swing.JFrame {
             }
             System.out.println("icono = " + icono);
             System.out.println("iconoComparar = " + iconoComparar);
+            
+            final_de_ronda = juego.todasLasFichasSeleccionadas(figura3);
+            if (final_de_ronda == true){
+                otraRonda();
+            }
         }
     }//GEN-LAST:event_lblFicha3MouseClicked
-    
+
+    public void otraRonda(){
+        System.out.println("Juego Terminado");
+        contador_iniciado = false;
+        segundos = 5;
+        lblFicha1.setIcon(null);
+        lblFicha2.setIcon(null);
+        lblFicha3.setIcon(null);
+        lblFichaReto.setIcon(null);
+        figura1.setRuta();
+        figura2.setRuta();
+        figura3.setRuta();
+        figura_a_encontrar.setRuta();
+    }
     /**
      * @param args the command line arguments
      */
