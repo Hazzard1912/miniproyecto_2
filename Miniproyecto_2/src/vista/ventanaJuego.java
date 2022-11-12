@@ -5,9 +5,8 @@
 package vista;
 
 import actores.*;
-import java.awt.Color;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 /**
@@ -21,10 +20,11 @@ public class ventanaJuego extends javax.swing.JFrame {
     /**
      * Creates new form ventanaJuego
      */
-    private int countdown = 3000;
+    private int countdown = 5;
     private Ronda ronda = new Ronda();
     private Jugador jugador = new Jugador("Jhonnier");
-    private boolean primer_vistazo;
+    
+    private boolean contador_contando;
     
     private Figura figura1;
     private Figura figura2;
@@ -32,20 +32,43 @@ public class ventanaJuego extends javax.swing.JFrame {
     
     private Figura figura_a_encontrar;
     
-    private Icon iconoFichaBuscar;
+    private Timer contador;
+    private int segundos;
     
     public ventanaJuego() {
         initComponents();
-        primer_vistazo = true;
+        contador_contando = false;
+        
+        segundos = 0;
+        
+        contador = new Timer (1000, new ActionListener ()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                // Aquí el código que queramos ejecutar.
+                segundos++;
+                System.out.println(segundos);
+                lblContador.setText("|"+segundos);
+                if (segundos == countdown)
+                {
+                    contador.stop();
+                    lblFicha1.setIcon(null);
+                    lblFicha2.setIcon(null);
+                    lblFicha3.setIcon(null);
+                    figura_a_encontrar.setRutaTo(lblFichaReto);
+                }
+            }
+        });
         
         figura_a_encontrar = new Figura();
         figura1 = new Figura();
         figura2 = new Figura();
         figura3 = new Figura();
         
-        figura1.setRutaTo(lblFicha1);
-        figura2.setRutaTo(lblFicha2);
-        figura3.setRutaTo(lblFicha3);
+//        figura1.setRutaTo(lblFicha1);
+  //      figura2.setRutaTo(lblFicha2);
+    //    figura3.setRutaTo(lblFicha3);
+        
     }
 
     /**
@@ -59,6 +82,7 @@ public class ventanaJuego extends javax.swing.JFrame {
 
         lblJugador = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
+        lblContador = new javax.swing.JLabel();
         lblFicha1 = new javax.swing.JLabel();
         lblFicha2 = new javax.swing.JLabel();
         lblFicha3 = new javax.swing.JLabel();
@@ -78,7 +102,12 @@ public class ventanaJuego extends javax.swing.JFrame {
         lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 0, 0));
         lblNombre.setText(jugador.getNombre());
-        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 310, 40));
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 190, 40));
+
+        lblContador.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        lblContador.setForeground(new java.awt.Color(255, 0, 0));
+        lblContador.setText("|");
+        getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, 40));
 
         lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
         lblFicha1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -118,12 +147,12 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        if(primer_vistazo == true){
-            primer_vistazo = false;
-            figura_a_encontrar.setRutaTo(lblFichaReto);
-            lblFicha1.setIcon(null);
-            lblFicha2.setIcon(null);
-            lblFicha3.setIcon(null);
+        if(contador_contando == false){
+            contador_contando = true;
+            figura1.setRutaTo(lblFicha1);
+            figura2.setRutaTo(lblFicha2);
+            figura3.setRutaTo(lblFicha3);
+            contador.start();
         }
         else{
             figura1.setRutaTo(lblFicha1);
@@ -141,12 +170,12 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
         // TODO add your handling code here:
-        if(primer_vistazo == true){
-            primer_vistazo = false;
-            figura_a_encontrar.setRutaTo(lblFichaReto);
-            lblFicha1.setIcon(null);
-            lblFicha2.setIcon(null);
-            lblFicha3.setIcon(null);
+        if(contador_contando == false){
+            contador_contando = true;
+            figura1.setRutaTo(lblFicha1);
+            figura2.setRutaTo(lblFicha2);
+            figura3.setRutaTo(lblFicha3);
+            contador.start();
         }
         else{
             figura2.setRutaTo(lblFicha2);
@@ -164,12 +193,12 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
         // TODO add your handling code here:
-        if(primer_vistazo == true){
-            primer_vistazo = false;
-            figura_a_encontrar.setRutaTo(lblFichaReto);
-            lblFicha1.setIcon(null);
-            lblFicha2.setIcon(null);
-            lblFicha3.setIcon(null);
+        if(contador_contando == false){
+             contador_contando = true;
+            figura1.setRutaTo(lblFicha1);
+            figura2.setRutaTo(lblFicha2);
+            figura3.setRutaTo(lblFicha3);
+            contador.start();
         }
         else{
             figura3.setRutaTo(lblFicha3);
@@ -185,9 +214,6 @@ public class ventanaJuego extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lblFicha3MouseClicked
     
-    private void setIconoABuscar(){
-        iconoFichaBuscar = lblFichaReto.getIcon();
-    }
     /**
      * @param args the command line arguments
      */
@@ -226,6 +252,7 @@ public class ventanaJuego extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contenedorPpal;
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblContador;
     private javax.swing.JLabel lblFicha1;
     private javax.swing.JLabel lblFicha2;
     private javax.swing.JLabel lblFicha3;
