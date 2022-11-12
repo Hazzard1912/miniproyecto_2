@@ -24,7 +24,7 @@ public class JuegoMemorable {
         numero_de_figuras_a_encontrar = 0;
     }
     
-    public void iniciarRonda(Figura figura_1, Figura figura_2, Figura figura_3, Figura una_figura_a_encontrar){
+    public void contarNumeroDeFigurasAEncontrar(Figura figura_1, Figura figura_2, Figura figura_3, Figura una_figura_a_encontrar){
         vector_de_figuras[0] = figura_1;
         vector_de_figuras[1] = figura_2;
         vector_de_figuras[2] = figura_3;

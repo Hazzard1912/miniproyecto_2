@@ -30,7 +30,7 @@ public class ventanaJuego extends javax.swing.JFrame {
     
     private int segundos;
     private Timer contador;
-    private boolean contador_iniciado; 
+    private boolean ronda_iniciada; 
     
     private JuegoMemorable juego;
     
@@ -50,9 +50,7 @@ public class ventanaJuego extends javax.swing.JFrame {
         {
             public void actionPerformed(ActionEvent e)
             {
-                // Aquí el código que queramos ejecutar.
                 segundos--;
-                System.out.println(segundos);
                 lblContador.setText("|"+segundos);
                 if (segundos == 0)
                 {
@@ -61,11 +59,11 @@ public class ventanaJuego extends javax.swing.JFrame {
                     lblFicha2.setIcon(null);
                     lblFicha3.setIcon(null);
                     figura_a_encontrar.setRutaTo(lblFichaReto);
-                    juego.iniciarRonda(figura1, figura2, figura3, figura_a_encontrar);
+                    juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figura_a_encontrar);
                 }
             }
         });
-        contador_iniciado = false;
+        ronda_iniciada = false;
         
         juego = new JuegoMemorable(jugador);
         
@@ -150,92 +148,43 @@ public class ventanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        if(contador_iniciado == false){
-            contador_iniciado = true;
-            figura1.setRutaTo(lblFicha1);
-            figura2.setRutaTo(lblFicha2);
-            figura3.setRutaTo(lblFicha3);
-            contador.start();
+        if(ronda_iniciada == false){
+            iniciarRonda();
         }
         else{
-            figura1.setRutaTo(lblFicha1);
-            String icono = figura1.getRuta();
-            String iconoComparar = figura_a_encontrar.getRuta();
-            if(icono.equals(iconoComparar)){
-                System.out.println("Acertaste!");
-            }else{
-                System.out.println("Fallaste!");
-            }
-            System.out.println("icono = " + icono);
-            System.out.println("iconoComparar = " + iconoComparar);
+            compararFiguraYMostrarFicha(figura1,lblFicha1);
             
-            final_de_ronda = juego.todasLasFichasSeleccionadas(figura1);
-            if (final_de_ronda == true){
-                otraRonda();
-            }
+            establecerFinalizacionDeRonda(figura1);
         }
     }//GEN-LAST:event_lblFicha1MouseClicked
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
         // TODO add your handling code here:
-        if(contador_iniciado == false){
-            contador_iniciado = true;
-            figura1.setRutaTo(lblFicha1);
-            figura2.setRutaTo(lblFicha2);
-            figura3.setRutaTo(lblFicha3);
-            contador.start();
+        if(ronda_iniciada == false){
+            iniciarRonda();
         }
         else{
-            figura2.setRutaTo(lblFicha2);
-            String icono = figura2.getRuta();
-            String iconoComparar = figura_a_encontrar.getRuta();
-            if(icono.equals(iconoComparar)){
-                System.out.println("Acertaste!");
-            }else{
-                System.out.println("Fallaste!");
-            }
-            System.out.println("icono = " + icono);
-            System.out.println("iconoComparar = " + iconoComparar);
+            compararFiguraYMostrarFicha(figura2,lblFicha2);
             
-            final_de_ronda = juego.todasLasFichasSeleccionadas(figura2);
-            if (final_de_ronda == true){
-                System.out.println("Juego Terminado");
-                otraRonda();
-            }
+            establecerFinalizacionDeRonda(figura2);
         }
     }//GEN-LAST:event_lblFicha2MouseClicked
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
         // TODO add your handling code here:
-        if(contador_iniciado == false){
-             contador_iniciado = true;
-            figura1.setRutaTo(lblFicha1);
-            figura2.setRutaTo(lblFicha2);
-            figura3.setRutaTo(lblFicha3);
-            contador.start();
+        if(ronda_iniciada == false){
+            iniciarRonda();
         }
         else{
-            figura3.setRutaTo(lblFicha3);
-            String icono = figura3.getRuta();
-            String iconoComparar = figura_a_encontrar.getRuta();
-            if(icono.equals(iconoComparar)){
-                System.out.println("Acertaste!");
-            }else{
-                System.out.println("Fallaste!");
-            }
-            System.out.println("icono = " + icono);
-            System.out.println("iconoComparar = " + iconoComparar);
+            compararFiguraYMostrarFicha(figura3,lblFicha3);
             
-            final_de_ronda = juego.todasLasFichasSeleccionadas(figura3);
-            if (final_de_ronda == true){
-                otraRonda();
-            }
+            establecerFinalizacionDeRonda(figura3);
         }
     }//GEN-LAST:event_lblFicha3MouseClicked
 
-    public void otraRonda(){
+    public void reiniciarElementosComoDeInicioDeRonda(){
         System.out.println("Juego Terminado");
-        contador_iniciado = false;
+        ronda_iniciada = false;
         segundos = 5;
         lblFicha1.setIcon(null);
         lblFicha2.setIcon(null);
@@ -246,6 +195,35 @@ public class ventanaJuego extends javax.swing.JFrame {
         figura3.setRuta();
         figura_a_encontrar.setRuta();
     }
+    
+    public void iniciarRonda(){
+        ronda_iniciada = true;
+        figura1.setRutaTo(lblFicha1);
+        figura2.setRutaTo(lblFicha2);
+        figura3.setRutaTo(lblFicha3);
+        contador.start();
+    }
+    
+    public void compararFiguraYMostrarFicha(Figura figuraX, javax.swing.JLabel lblFichaX){
+        figuraX.setRutaTo(lblFichaX);
+        String icono = figuraX.getRuta();
+        String iconoComparar = figura_a_encontrar.getRuta();
+        if(icono.equals(iconoComparar)){
+            System.out.println("Acertaste!");
+        }else{
+            System.out.println("Fallaste!");
+        }
+        System.out.println("icono = " + icono);
+        System.out.println("iconoComparar = " + iconoComparar);
+    }
+    
+    public void establecerFinalizacionDeRonda(Figura figuraX){
+        final_de_ronda = juego.todasLasFichasSeleccionadas(figuraX);
+        if (final_de_ronda == true){
+            reiniciarElementosComoDeInicioDeRonda();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
