@@ -26,6 +26,10 @@ public class ventanaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblJugar = new javax.swing.JLabel();
+        lblComoJugar = new javax.swing.JLabel();
+        lblParaQueSirve = new javax.swing.JLabel();
+        pnlBackground = new javax.swing.JPanel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,8 +44,36 @@ public class ventanaInicio extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblJugar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblJugarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 220, 80));
+
+        lblComoJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblComoJugar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblComoJugarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblComoJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 180, 120));
+
+        lblParaQueSirve.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblParaQueSirve.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblParaQueSirveMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblParaQueSirve, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 230, 120));
+
+        pnlBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background/backgroundInicio.png"))); // NOI18N
-        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        pnlBackground.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+
+        getContentPane().add(pnlBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -49,6 +81,23 @@ public class ventanaInicio extends javax.swing.JFrame {
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         this.dispose();
     }//GEN-LAST:event_formMouseClicked
+
+    private void lblJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJugarMouseClicked
+        //Debe ejecutar la ventana datos.
+        
+    }//GEN-LAST:event_lblJugarMouseClicked
+
+    private void lblComoJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblComoJugarMouseClicked
+        // TODO add your handling code here:
+        //Debe ejecutar la ventana como jugar
+        
+    }//GEN-LAST:event_lblComoJugarMouseClicked
+
+    private void lblParaQueSirveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblParaQueSirveMouseClicked
+        // TODO add your handling code here:
+        //debe ejecutar la ventana para que sirve
+        
+    }//GEN-LAST:event_lblParaQueSirveMouseClicked
 
     /**
      * @param args the command line arguments
@@ -87,5 +136,9 @@ public class ventanaInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblComoJugar;
+    private javax.swing.JLabel lblJugar;
+    private javax.swing.JLabel lblParaQueSirve;
+    private javax.swing.JPanel pnlBackground;
     // End of variables declaration//GEN-END:variables
 }
