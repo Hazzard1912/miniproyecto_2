@@ -12,18 +12,20 @@ package actores;
  * Alejandra Carvajal
  */
 public class Figura {
-    private static String[] vector_de_imagenes = {"/imagenes/figuras/circulo.png","/imagenes/figuras/cuadrado.png","/imagenes/figuras/triangulo.png"};
-    private String ruta_de_la_imagen;
-    private int numero_de_la_imagen;
+    private static String[] listaDeRutasDeImagenes = {"/imagenes/figuras/circulo.png","/imagenes/figuras/cuadrado.png","/imagenes/figuras/triangulo.png"};
+    private String rutaDeImagen;
+    private boolean setRutaDeImagenSinUsar;
+    private boolean figuraObservada;
+    
     private String forma;
     private String color;
-    private boolean primer_setRuta;
     
     //public Figura(String forma, String color){
     public Figura(){
 //        this.forma = forma;
   //      this.color = color;
-        primer_setRuta = true;
+        setRutaDeImagenSinUsar = true;
+        figuraObservada = false;
     }
 
     public String getForma() {
@@ -42,29 +44,36 @@ public class Figura {
         this.color = color;
     }
     
-    public void setRuta() {
-        if (primer_setRuta == true) {
-            primer_setRuta = false;
+    public void setRutaDeImagen() {
+        if (setRutaDeImagenSinUsar == true) {
+            setRutaDeImagenSinUsar = false;
         }
-        numero_de_la_imagen = (int) (Math.random()*3);
-        ruta_de_la_imagen = vector_de_imagenes[numero_de_la_imagen];
+        int numeroRandom = (int) (Math.random()*3);
+        rutaDeImagen = listaDeRutasDeImagenes[numeroRandom];
+        
+        figuraObservada = false;
     }
     
-    public String getRuta() {
-        return ruta_de_la_imagen;
+    public String getRutaDeImagen() {
+        return rutaDeImagen;
     }
     
-    public void setRutaTo(javax.swing.JLabel un_label) {
-        if (primer_setRuta == true) {
-            setRuta();
-            /*primer_setRuta = false;
-            numero_de_la_imagen = (int) (Math.random()*3);
-            ruta_de_la_imagen = vector_de_imagenes[numero_de_la_imagen];*/
+    public void setRutaDeImagenTo(javax.swing.JLabel un_label) {
+        if (setRutaDeImagenSinUsar == true) {
+            setRutaDeImagen();
         }
-        un_label.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta_de_la_imagen)));
+        un_label.setIcon(new javax.swing.ImageIcon(getClass().getResource(rutaDeImagen)));
     }
     
-//    public String getRuta(String color) {
-  //      setRuta();
-    //}
+    public void observarFigura(){
+        figuraObservada = true;
+    }
+    
+    public boolean getFiguraObservada (){
+        return figuraObservada;
+    }
+    
+    public void anularRutaDeImagen(){
+        
+    }
 }

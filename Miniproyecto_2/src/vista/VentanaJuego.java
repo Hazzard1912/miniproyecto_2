@@ -28,6 +28,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Figura figura2;
     private Figura figura3;
     
+    private Figura[] listaDeFiguras = {figura1, figura2, figura3};
+    
     private boolean rondaIniciada; 
     private boolean rondaFinalizada;
     private boolean fichasClickeables;
@@ -62,14 +64,14 @@ public class VentanaJuego extends javax.swing.JFrame {
                     lblFicha1.setIcon(null);
                     lblFicha2.setIcon(null);
                     lblFicha3.setIcon(null);
-                    while ((figuraReto.getRuta() != figura1.getRuta()) && (figuraReto.getRuta() != figura2.getRuta()) && (figuraReto.getRuta() != figura3.getRuta())){
-                        System.out.println(figuraReto.getRuta());
-                        System.out.println(figura1.getRuta());
-                        System.out.println(figura2.getRuta());
-                        System.out.println(figura3.getRuta());
-                        figuraReto.setRuta();
+                    while ((figuraReto.getRutaDeImagen() != figura1.getRutaDeImagen()) && (figuraReto.getRutaDeImagen() != figura2.getRutaDeImagen()) && (figuraReto.getRutaDeImagen() != figura3.getRutaDeImagen())){ // && (figuraReto.getTutaDeImagen == null)
+                        System.out.println(figuraReto.getRutaDeImagen());
+                        System.out.println(figura1.getRutaDeImagen());
+                        System.out.println(figura2.getRutaDeImagen());
+                        System.out.println(figura3.getRutaDeImagen());
+                        figuraReto.setRutaDeImagen();
                     }
-                    figuraReto.setRutaTo(lblFichaReto);
+                    figuraReto.setRutaDeImagenTo(lblFichaReto);
                     juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
                     fichasClickeables = true;
                 }
@@ -176,9 +178,13 @@ public class VentanaJuego extends javax.swing.JFrame {
                 iniciarRonda();
             }
             else{
-                mostrarFichaYCompararFigura(lblFichaX,figuraX);
-
-                finalizarOContinuarRonda(figuraX);
+                if (! figuraX.getFiguraObservada()){
+                    figuraX.observarFigura();
+                    
+                    mostrarFichaYCompararFigura(lblFichaX,figuraX);
+                    
+                    finalizarOContinuarRonda(figuraX);
+                }
             }
         }
     }
@@ -193,24 +199,24 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblFicha2.setIcon(null);
         lblFicha3.setIcon(null);
         lblFichaReto.setIcon(null);
-        figura1.setRuta();
-        figura2.setRuta();
-        figura3.setRuta();
-        figuraReto.setRuta();
+        figura1.setRutaDeImagen();
+        figura2.setRutaDeImagen();
+        figura3.setRutaDeImagen();
+        figuraReto.setRutaDeImagen();
     }
     
     public void iniciarRonda(){
         rondaIniciada = true;
-        figura1.setRutaTo(lblFicha1);
-        figura2.setRutaTo(lblFicha2);
-        figura3.setRutaTo(lblFicha3);
+        figura1.setRutaDeImagenTo(lblFicha1);
+        figura2.setRutaDeImagenTo(lblFicha2);
+        figura3.setRutaDeImagenTo(lblFicha3);
         contador.start();
     }
     
     public void mostrarFichaYCompararFigura(javax.swing.JLabel lblFichaX, Figura figuraX){
-        figuraX.setRutaTo(lblFichaX);
-        String icono = figuraX.getRuta();
-        String iconoComparar = figuraReto.getRuta();
+        figuraX.setRutaDeImagenTo(lblFichaX);
+        String icono = figuraX.getRutaDeImagen();
+        String iconoComparar = figuraReto.getRutaDeImagen();
         if(icono.equals(iconoComparar)){
             System.out.println("Acertaste!");
         }else{
@@ -224,6 +230,31 @@ public class VentanaJuego extends javax.swing.JFrame {
         rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX);
         if (rondaFinalizada == true){
             establecerElementosComoDeInicioDeRonda();
+        }
+    }
+    
+    public void figurasAMostrar(){
+        ronda.mas1NumeroDeRonda();
+        
+        if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
+            int numeroRandom = (int) (Math.random()*3);
+            switch (numeroRandom) {
+                case 0:
+                    figura1.setRutaDeImagen();
+                    break;
+                case 1:
+                    figura2.setRutaDeImagen();
+                    break;
+                case 2:
+                    figura3.setRutaDeImagen();
+                    break;
+                default:
+                    break;
+            }
+        } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
+            
+        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
+            
         }
     }
     

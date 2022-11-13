@@ -33,10 +33,10 @@ public class JuegoMemorable {
         this.figura_a_encontrar = una_figura_a_encontrar;
         
         for (int i = 0; i < 3; i++){
-            System.out.println(vector_de_figuras[i].getRuta());
-            System.out.println(una_figura_a_encontrar.getRuta());
+            System.out.println(vector_de_figuras[i].getRutaDeImagen());
+            System.out.println(una_figura_a_encontrar.getRutaDeImagen());
 
-            if (vector_de_figuras[i].getRuta() == figura_a_encontrar.getRuta()){
+            if (vector_de_figuras[i].getRutaDeImagen() == figura_a_encontrar.getRutaDeImagen()){
                 numero_de_figuras_a_encontrar++;
             }
         }
@@ -48,7 +48,7 @@ public class JuegoMemorable {
     }
     
     public boolean todasLasFichasSeleccionadas(Figura figura){
-        if (figura_a_encontrar.getRuta() == figura.getRuta()){
+        if (figura_a_encontrar.getRutaDeImagen() == figura.getRutaDeImagen()){
             numero_de_figuras_a_encontrar--;
         }
         
