@@ -4,12 +4,14 @@
  */
 package vista;
 
+import actores.Jugador;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aleja
  */
 public class VentanaDatos extends javax.swing.JFrame {
-
     /**
      * Creates new form ventanaDatos
      */
@@ -48,6 +50,11 @@ public class VentanaDatos extends javax.swing.JFrame {
         txtFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFieldNombre.setText("JUGADOR 1");
         txtFieldNombre.setCaretColor(new java.awt.Color(255, 255, 204));
+        txtFieldNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFieldNombreMouseClicked(evt);
+            }
+        });
         txtFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldNombreActionPerformed(evt);
@@ -75,10 +82,21 @@ public class VentanaDatos extends javax.swing.JFrame {
 
     private void btnOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOkMouseClicked
         // TODO add your handling code here:
-        VentanaJuego unaVentanaJuego = new VentanaJuego();
-        unaVentanaJuego.setVisible(true);
-        this.dispose();
+        if("JUGADOR 1".equals(txtFieldNombre.getText())){
+           JOptionPane.showMessageDialog(this, "Ingresa un nombre valido", "", 1);
+        }else{
+            VentanaJuego.jugador.setNombre(txtFieldNombre.getText());
+            this.dispose();
+            VentanaJuego unaVentanaJuego = new VentanaJuego();
+            unaVentanaJuego.setVisible(true);
+        }
+
     }//GEN-LAST:event_btnOkMouseClicked
+
+    private void txtFieldNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFieldNombreMouseClicked
+        // TODO add your handling code here:
+        txtFieldNombre.setText("");
+    }//GEN-LAST:event_txtFieldNombreMouseClicked
 
     /**
      * @param args the command line arguments

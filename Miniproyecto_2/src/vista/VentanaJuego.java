@@ -21,7 +21,7 @@ public class VentanaJuego extends javax.swing.JFrame {
      * Creates new form VentanaJuego
      */
     private Ronda ronda;
-    private Jugador jugador;
+    public static Jugador jugador = new Jugador();
 
     private Figura figuraReto;
     private Figura figura1;
@@ -39,8 +39,6 @@ public class VentanaJuego extends javax.swing.JFrame {
     
     public VentanaJuego() {
         ronda = new Ronda();
-        jugador = new Jugador();
-        
         figuraReto = new Figura();
         figura1 = new Figura();
         figura2 = new Figura();
