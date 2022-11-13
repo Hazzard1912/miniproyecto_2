@@ -39,11 +39,6 @@ public class VentanaInicio extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setUndecorated(true);
         setSize(new java.awt.Dimension(800, 500));
-        addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                formMouseClicked(evt);
-            }
-        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -70,6 +65,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         });
         getContentPane().add(lblParaQueSirve, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 230, 120));
 
+        pnlBackground.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlBackgroundMouseClicked(evt);
+            }
+        });
         pnlBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background/backgroundInicio.png"))); // NOI18N
@@ -79,10 +79,6 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_formMouseClicked
 
     private void lblJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJugarMouseClicked
         //Debe ejecutar la ventana datos.
@@ -105,6 +101,10 @@ public class VentanaInicio extends javax.swing.JFrame {
         VentanaParaQueSirve unaVentanaParaQueSirve = new VentanaParaQueSirve();
         unaVentanaParaQueSirve.setVisible(true);
     }//GEN-LAST:event_lblParaQueSirveMouseClicked
+
+    private void pnlBackgroundMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBackgroundMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBackgroundMouseClicked
 
     /**
      * @param args the command line arguments
