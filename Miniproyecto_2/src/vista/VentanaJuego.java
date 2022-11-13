@@ -62,6 +62,13 @@ public class VentanaJuego extends javax.swing.JFrame {
                     lblFicha1.setIcon(null);
                     lblFicha2.setIcon(null);
                     lblFicha3.setIcon(null);
+                    while ((figuraReto.getRuta() != figura1.getRuta()) && (figuraReto.getRuta() != figura2.getRuta()) && (figuraReto.getRuta() != figura3.getRuta())){
+                        System.out.println(figuraReto.getRuta());
+                        System.out.println(figura1.getRuta());
+                        System.out.println(figura2.getRuta());
+                        System.out.println(figura3.getRuta());
+                        figuraReto.setRuta();
+                    }
                     figuraReto.setRutaTo(lblFichaReto);
                     juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
                 }
@@ -183,7 +190,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lblFicha3MouseClicked
 
-    public void reiniciarElementosComoDeInicioDeRonda(){
+    public void establecerElementosComoDeInicioDeRonda(){
         System.out.println("Juego Terminado");
         rondaIniciada = false;
         tiempoDeObservacion = 5;
@@ -221,7 +228,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     public void finalizarOContinuarRonda(Figura figuraX){
         rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX);
         if (rondaFinalizada == true){
-            reiniciarElementosComoDeInicioDeRonda();
+            establecerElementosComoDeInicioDeRonda();
         }
     }
     
