@@ -6,8 +6,12 @@ package vista;
 
 /**
  *
- * @author aleja
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
+import actores.Jugador;
 public class ventanaDatos extends javax.swing.JFrame {
 
     /**
@@ -27,8 +31,8 @@ public class ventanaDatos extends javax.swing.JFrame {
     private void initComponents() {
 
         ingresoNombre = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtIngresoNombre = new javax.swing.JTextField();
+        btnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -43,30 +47,49 @@ public class ventanaDatos extends javax.swing.JFrame {
         ingresoNombre.setText("INGRESE SU NOMBRE");
         getContentPane().add(ingresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 430, 50));
 
-        jTextField1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("JUGADOR 1");
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 204));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtIngresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        txtIngresoNombre.setForeground(new java.awt.Color(0, 102, 102));
+        txtIngresoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIngresoNombre.setText("JUGADOR 1");
+        txtIngresoNombre.setCaretColor(new java.awt.Color(255, 255, 204));
+        txtIngresoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtIngresoNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 300, -1));
+        getContentPane().add(txtIngresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 300, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 204));
-        jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 51));
-        jButton1.setText("OK");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 130, 60));
+        btnOk.setBackground(new java.awt.Color(255, 255, 204));
+        btnOk.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
+        btnOk.setForeground(new java.awt.Color(0, 102, 51));
+        btnOk.setText("OK");
+        btnOk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOkMouseClicked(evt);
+            }
+        });
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 130, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtIngresoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngresoNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtIngresoNombreActionPerformed
+
+    private void btnOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOkMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOkMouseClicked
+
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        String nombreJugador = txtIngresoNombre.getText();
+        Jugador jugador1 = new Jugador (nombreJugador);
+    }//GEN-LAST:event_btnOkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,13 +122,14 @@ public class ventanaDatos extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaDatos().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOk;
     private javax.swing.JLabel ingresoNombre;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtIngresoNombre;
     // End of variables declaration//GEN-END:variables
 }

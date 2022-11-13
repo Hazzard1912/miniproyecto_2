@@ -14,6 +14,7 @@ import javax.swing.Timer;
  * @authors:
  * Jhonnier Hernandez
  * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class ventanaJuego extends javax.swing.JFrame {
     
