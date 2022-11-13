@@ -23,52 +23,53 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Ronda ronda;
     private Jugador jugador;
 
-    private Figura figura_a_encontrar;
+    private Figura figuraReto;
     private Figura figura1;
     private Figura figura2;
     private Figura figura3;
     
-    private int segundos;
+    private boolean rondaIniciada; 
+    private boolean rondaFinalizada;
+
+    private int tiempoDeObservacion;
     private Timer contador;
-    private boolean ronda_iniciada; 
     
     private JuegoMemorable juego;
     
-    private boolean final_de_ronda;
     
     public VentanaJuego() {
         ronda = new Ronda();
         jugador = new Jugador();
         
-        figura_a_encontrar = new Figura();
+        figuraReto = new Figura();
         figura1 = new Figura();
         figura2 = new Figura();
         figura3 = new Figura();
         
-        segundos = 5;
+        rondaIniciada = false;
+        rondaFinalizada = false;        
+        
+        tiempoDeObservacion = 5;
         contador = new Timer (1000, new ActionListener ()
         {
             public void actionPerformed(ActionEvent e)
             {
-                segundos--;
-                lblContador.setText("|"+segundos);
-                if (segundos == 0)
+                tiempoDeObservacion--;
+                lblContador.setText("|"+tiempoDeObservacion);
+                if (tiempoDeObservacion == 0)
                 {
                     contador.stop();
                     lblFicha1.setIcon(null);
                     lblFicha2.setIcon(null);
                     lblFicha3.setIcon(null);
-                    figura_a_encontrar.setRutaTo(lblFichaReto);
-                    juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figura_a_encontrar);
+                    figuraReto.setRutaTo(lblFichaReto);
+                    juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
                 }
             }
         });
-        ronda_iniciada = false;
         
         juego = new JuegoMemorable(jugador);
-        
-        final_de_ronda = false;
-        
+                
         initComponents();
     }
 
@@ -107,7 +108,7 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         lblContador.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         lblContador.setForeground(new java.awt.Color(255, 0, 0));
-        lblContador.setText("|"+segundos);
+        lblContador.setText("|"+tiempoDeObservacion);
         getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, 40));
 
         lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
@@ -148,44 +149,44 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        if(ronda_iniciada == false){
+        if(rondaIniciada == false){
             iniciarRonda();
         }
         else{
-            compararFiguraYMostrarFicha(figura1,lblFicha1);
+            mostrarFichaYCompararFigura(lblFicha1,figura1);
             
-            establecerFinalizacionDeRonda(figura1);
+            finalizarOContinuarRonda(figura1);
         }
     }//GEN-LAST:event_lblFicha1MouseClicked
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
         // TODO add your handling code here:
-        if(ronda_iniciada == false){
+        if(rondaIniciada == false){
             iniciarRonda();
         }
         else{
-            compararFiguraYMostrarFicha(figura2,lblFicha2);
+            mostrarFichaYCompararFigura(lblFicha2,figura2);
             
-            establecerFinalizacionDeRonda(figura2);
+            finalizarOContinuarRonda(figura2);
         }
     }//GEN-LAST:event_lblFicha2MouseClicked
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
         // TODO add your handling code here:
-        if(ronda_iniciada == false){
+        if(rondaIniciada == false){
             iniciarRonda();
         }
         else{
-            compararFiguraYMostrarFicha(figura3,lblFicha3);
+            mostrarFichaYCompararFigura(lblFicha3,figura3);
             
-            establecerFinalizacionDeRonda(figura3);
+            finalizarOContinuarRonda(figura3);
         }
     }//GEN-LAST:event_lblFicha3MouseClicked
 
     public void reiniciarElementosComoDeInicioDeRonda(){
         System.out.println("Juego Terminado");
-        ronda_iniciada = false;
-        segundos = 5;
+        rondaIniciada = false;
+        tiempoDeObservacion = 5;
         lblFicha1.setIcon(null);
         lblFicha2.setIcon(null);
         lblFicha3.setIcon(null);
@@ -193,21 +194,21 @@ public class VentanaJuego extends javax.swing.JFrame {
         figura1.setRuta();
         figura2.setRuta();
         figura3.setRuta();
-        figura_a_encontrar.setRuta();
+        figuraReto.setRuta();
     }
     
     public void iniciarRonda(){
-        ronda_iniciada = true;
+        rondaIniciada = true;
         figura1.setRutaTo(lblFicha1);
         figura2.setRutaTo(lblFicha2);
         figura3.setRutaTo(lblFicha3);
         contador.start();
     }
     
-    public void compararFiguraYMostrarFicha(Figura figuraX, javax.swing.JLabel lblFichaX){
+    public void mostrarFichaYCompararFigura(javax.swing.JLabel lblFichaX, Figura figuraX){
         figuraX.setRutaTo(lblFichaX);
         String icono = figuraX.getRuta();
-        String iconoComparar = figura_a_encontrar.getRuta();
+        String iconoComparar = figuraReto.getRuta();
         if(icono.equals(iconoComparar)){
             System.out.println("Acertaste!");
         }else{
@@ -217,9 +218,9 @@ public class VentanaJuego extends javax.swing.JFrame {
         System.out.println("iconoComparar = " + iconoComparar);
     }
     
-    public void establecerFinalizacionDeRonda(Figura figuraX){
-        final_de_ronda = juego.todasLasFichasSeleccionadas(figuraX);
-        if (final_de_ronda == true){
+    public void finalizarOContinuarRonda(Figura figuraX){
+        rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX);
+        if (rondaFinalizada == true){
             reiniciarElementosComoDeInicioDeRonda();
         }
     }

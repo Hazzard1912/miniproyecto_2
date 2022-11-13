@@ -35,7 +35,6 @@ public class VentanaInicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setSize(new java.awt.Dimension(800, 500));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -85,6 +84,8 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void lblJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJugarMouseClicked
         //Debe ejecutar la ventana datos.
         
+        ventanaJuego unaVentanaJuego = new ventanaJuego();
+        unaVentanaJuego.setVisible(true);
     }//GEN-LAST:event_lblJugarMouseClicked
 
     private void lblComoJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblComoJugarMouseClicked
