@@ -8,12 +8,12 @@ package vista;
  *
  * @author PC
  */
-public class ventanaInicio extends javax.swing.JFrame {
+public class VentanaInicio extends javax.swing.JFrame {
 
     /**
      * Creates new form ventanaInicio
      */
-    public ventanaInicio() {
+    public VentanaInicio() {
         initComponents();
     }
 
@@ -96,7 +96,8 @@ public class ventanaInicio extends javax.swing.JFrame {
     private void lblParaQueSirveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblParaQueSirveMouseClicked
         // TODO add your handling code here:
         //debe ejecutar la ventana para que sirve
-        
+        VentanaParaQueSirve unaVentanaParaQueSirve = new VentanaParaQueSirve();
+        unaVentanaParaQueSirve.setVisible(true);
     }//GEN-LAST:event_lblParaQueSirveMouseClicked
 
     /**
@@ -116,20 +117,21 @@ public class ventanaInicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ventanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ventanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ventanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ventanaInicio().setVisible(true);
+                new VentanaInicio().setVisible(true);
             }
         });
     }
