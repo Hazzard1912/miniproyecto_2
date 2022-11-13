@@ -21,7 +21,7 @@ public class VentanaJuego extends javax.swing.JFrame {
      * Creates new form VentanaJuego
      */
     private Ronda ronda;
-    private Jugador jugador;
+    public static Jugador jugador = new Jugador();
 
     private Figura figuraReto;
     private Figura figura1;
@@ -39,8 +39,6 @@ public class VentanaJuego extends javax.swing.JFrame {
     
     public VentanaJuego() {
         ronda = new Ronda();
-        jugador = new Jugador();
-        
         figuraReto = new Figura();
         figura1 = new Figura();
         figura2 = new Figura();
@@ -118,7 +116,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblContador.setText("|"+tiempoDeObservacion);
         getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, 40));
 
-        lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
         lblFicha1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblFicha1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -257,6 +254,12 @@ public class VentanaJuego extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

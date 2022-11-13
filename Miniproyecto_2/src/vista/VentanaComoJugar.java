@@ -11,9 +11,9 @@ import java.awt.Cursor;
  * @author PC
  */
 public class VentanaComoJugar extends javax.swing.JFrame {
+
     private static int paginaActual = 1;
-    private boolean ventanaEjecutandose = true;
-    
+
     /**
      * Creates new form ventanaComoJugar
      */
@@ -90,32 +90,53 @@ public class VentanaComoJugar extends javax.swing.JFrame {
 
     private void lblAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtrasMouseClicked
         // TODO add your handling code here:
-        paginaActual--;
-        switch(paginaActual){
-            case 1 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png")));
-            case 2 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina2.png")));
-            case 3 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina3.png")));
-            case 4 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
-    }
-        System.out.println("paginaActual: " + paginaActual);
+        if (paginaActual != 1) {
+            paginaActual--;
+            switch (paginaActual) {
+                case 1 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png")));
+                case 2 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina2.png")));
+                case 3 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina3.png")));
+                case 4 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
+            }
+        }
     }//GEN-LAST:event_lblAtrasMouseClicked
 
     private void lblSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSiguienteMouseClicked
         // TODO add your handling code here:
+        if (paginaActual != 5) {
             paginaActual++;
-        switch(paginaActual){
-            case 1 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png")));
-            case 2 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina2.png")));
-            case 3 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina3.png")));
-            case 4 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
-            case 5 -> this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina5.png")));
-    }
-        System.out.println("paginaActual: " + paginaActual);
+            switch (paginaActual) {
+                case 1 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png")));
+                case 2 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina2.png")));
+                case 3 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina3.png")));
+                case 4 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
+                case 5 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina5.png")));
+            }
+        }
     }//GEN-LAST:event_lblSiguienteMouseClicked
 
     private void lblValidarPaginaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblValidarPaginaMouseEntered
         // TODO add your handling code here:
-        
+        if (paginaActual == 1) {
+            lblAtras.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        } else if (paginaActual != 1) {
+            lblAtras.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+
+        if (paginaActual == 5) {
+            lblSiguiente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        } else if (paginaActual != 5) {
+            lblSiguiente.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_lblValidarPaginaMouseEntered
 
     /**
