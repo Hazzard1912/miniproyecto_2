@@ -30,6 +30,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     
     private boolean rondaIniciada; 
     private boolean rondaFinalizada;
+    private boolean fichasClickeables;
 
     private int tiempoDeObservacion;
     private Timer contador;
@@ -45,7 +46,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         figura3 = new Figura();
         
         rondaIniciada = false;
-        rondaFinalizada = false;        
+        rondaFinalizada = false;
+        fichasClickeables = true;
         
         tiempoDeObservacion = 5;
         contador = new Timer (1000, new ActionListener ()
@@ -69,6 +71,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                     }
                     figuraReto.setRutaTo(lblFichaReto);
                     juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
+                    fichasClickeables = true;
                 }
             }
         });
@@ -153,43 +156,38 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        if(rondaIniciada == false){
-            iniciarRonda();
-        }
-        else{
-            mostrarFichaYCompararFigura(lblFicha1,figura1);
-            
-            finalizarOContinuarRonda(figura1);
-        }
+        lblFichaXMouseClicked(lblFicha1, figura1);
     }//GEN-LAST:event_lblFicha1MouseClicked
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
         // TODO add your handling code here:
-        if(rondaIniciada == false){
-            iniciarRonda();
-        }
-        else{
-            mostrarFichaYCompararFigura(lblFicha2,figura2);
-            
-            finalizarOContinuarRonda(figura2);
-        }
+        lblFichaXMouseClicked(lblFicha2, figura2);
     }//GEN-LAST:event_lblFicha2MouseClicked
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
         // TODO add your handling code here:
-        if(rondaIniciada == false){
-            iniciarRonda();
-        }
-        else{
-            mostrarFichaYCompararFigura(lblFicha3,figura3);
-            
-            finalizarOContinuarRonda(figura3);
-        }
+        lblFichaXMouseClicked(lblFicha3, figura3);
     }//GEN-LAST:event_lblFicha3MouseClicked
 
+    public void lblFichaXMouseClicked(javax.swing.JLabel lblFichaX, Figura figuraX) {
+        if (fichasClickeables){
+            if(rondaIniciada == false){
+                fichasClickeables = false;
+                iniciarRonda();
+            }
+            else{
+                mostrarFichaYCompararFigura(lblFichaX,figuraX);
+
+                finalizarOContinuarRonda(figuraX);
+            }
+        }
+    }
+    
     public void establecerElementosComoDeInicioDeRonda(){
         System.out.println("Juego Terminado");
         rondaIniciada = false;
+        //rondaFinalizada = false;
+        //fichasClickeables = true;
         tiempoDeObservacion = 5;
         lblFicha1.setIcon(null);
         lblFicha2.setIcon(null);
