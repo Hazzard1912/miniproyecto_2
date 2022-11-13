@@ -4,11 +4,16 @@
  */
 package vista;
 
+import java.awt.Cursor;
+
 /**
  *
  * @author PC
  */
 public class VentanaComoJugar extends javax.swing.JFrame {
+
+    private static int paginaActual = 1;
+    private boolean ventanaEjecutandose = true;
 
     /**
      * Creates new form ventanaComoJugar
@@ -26,19 +31,115 @@ public class VentanaComoJugar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblCerrar = new javax.swing.JLabel();
+        lblSiguiente = new javax.swing.JLabel();
+        lblAtras = new javax.swing.JLabel();
+        lblValidarPagina = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 50, 40));
+
+        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSiguienteMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 120, 40));
+
+        lblAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAtrasMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 120, 40));
+
+        lblValidarPagina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblValidarPaginaMouseEntered(evt);
+            }
+        });
+        getContentPane().add(lblValidarPagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png"))); // NOI18N
         jPanel1.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_lblCerrarMouseClicked
+
+    private void lblAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtrasMouseClicked
+        // TODO add your handling code here:
+        if (paginaActual != 1) {
+            paginaActual--;
+            switch (paginaActual) {
+                case 1 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png")));
+                case 2 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina2.png")));
+                case 3 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina3.png")));
+                case 4 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
+            }
+        }
+        System.out.println("paginaActual: " + paginaActual);
+    }//GEN-LAST:event_lblAtrasMouseClicked
+
+    private void lblSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSiguienteMouseClicked
+        // TODO add your handling code here:
+        if (paginaActual != 5) {
+            paginaActual++;
+            switch (paginaActual) {
+                case 1 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina1.png")));
+                case 2 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina2.png")));
+                case 3 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina3.png")));
+                case 4 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
+                case 5 ->
+                    this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina5.png")));
+            }
+        }
+    }//GEN-LAST:event_lblSiguienteMouseClicked
+
+    private void lblValidarPaginaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblValidarPaginaMouseEntered
+        // TODO add your handling code here:
+        if (paginaActual == 1) {
+            lblAtras.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        } else if (paginaActual != 1) {
+            lblAtras.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+
+        if (paginaActual == 5) {
+            lblSiguiente.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        } else if (paginaActual != 5) {
+            lblSiguiente.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
+    }//GEN-LAST:event_lblValidarPaginaMouseEntered
 
     /**
      * @param args the command line arguments
@@ -78,6 +179,10 @@ public class VentanaComoJugar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblAtras;
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblSiguiente;
+    private javax.swing.JLabel lblValidarPagina;
     // End of variables declaration//GEN-END:variables
 }
