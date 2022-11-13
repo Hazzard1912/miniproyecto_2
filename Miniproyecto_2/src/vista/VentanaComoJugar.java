@@ -16,7 +16,6 @@ import java.awt.Cursor;
 public class VentanaComoJugar extends javax.swing.JFrame {
 
     private static int paginaActual = 1;
-    private boolean ventanaEjecutandose = true;
 
     /**
      * Creates new form ventanaComoJugar
@@ -107,7 +106,6 @@ public class VentanaComoJugar extends javax.swing.JFrame {
                     this.lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ventanaComoJugar/pagina4.png")));
             }
         }
-        System.out.println("paginaActual: " + paginaActual);
     }//GEN-LAST:event_lblAtrasMouseClicked
 
     private void lblSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSiguienteMouseClicked

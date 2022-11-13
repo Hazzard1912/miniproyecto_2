@@ -16,7 +16,7 @@ public class Jugador {
     private int vidas;
     
     public Jugador(){
-        nombre = "Jugador";
+        nombre = "";
         vidas = 3;
     }
     

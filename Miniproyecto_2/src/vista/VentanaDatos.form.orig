@@ -31,7 +31,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="ingresoNombre">
+    <Component class="javax.swing.JLabel" name="lblIngresoNombre">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Rounded MT Bold" size="36" style="0"/>
@@ -48,7 +48,11 @@
         </Constraint>
       </Constraints>
     </Component>
+<<<<<<<< HEAD:Miniproyecto_2/src/vista/VentanaDato.form
     <Component class="javax.swing.JTextField" name="txtIngresoNombre">
+========
+    <Component class="javax.swing.JTextField" name="txtFieldNombre">
+>>>>>>>> feb38cb7b1c3524b128cc2530e9528768a9a772c:Miniproyecto_2/src/vista/VentanaDatos.form
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Rounded MT Bold" size="24" style="0"/>
@@ -63,7 +67,12 @@
         </Property>
       </Properties>
       <Events>
+<<<<<<<< HEAD:Miniproyecto_2/src/vista/VentanaDato.form
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIngresoNombreActionPerformed"/>
+========
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtFieldNombreMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFieldNombreActionPerformed"/>
+>>>>>>>> feb38cb7b1c3524b128cc2530e9528768a9a772c:Miniproyecto_2/src/vista/VentanaDatos.form
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -86,7 +95,10 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnOkMouseClicked"/>
+<<<<<<<< HEAD:Miniproyecto_2/src/vista/VentanaDato.form
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOkActionPerformed"/>
+========
+>>>>>>>> feb38cb7b1c3524b128cc2530e9528768a9a772c:Miniproyecto_2/src/vista/VentanaDatos.form
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

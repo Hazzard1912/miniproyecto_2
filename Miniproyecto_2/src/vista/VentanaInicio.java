@@ -86,9 +86,14 @@ public class VentanaInicio extends javax.swing.JFrame {
 
     private void lblJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJugarMouseClicked
         //Debe ejecutar la ventana datos.
+
         
         ventanaJuego unaVentanaJuego = new ventanaJuego();
         unaVentanaJuego.setVisible(true);
+
+        VentanaDatos unaVentanaDatos = new VentanaDatos();
+        unaVentanaDatos.setVisible(true);
+
     }//GEN-LAST:event_lblJugarMouseClicked
 
     private void lblComoJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblComoJugarMouseClicked

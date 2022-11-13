@@ -4,20 +4,18 @@
  */
 package vista;
 
+import actores.Jugador;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @authors:
- * Jhonnier Hernandez
- * Juan Cifuentes
- * Alejandra Carvajal
+ * @author aleja
  */
-import actores.Jugador;
-public class VentanaDato extends javax.swing.JFrame {
-
+public class VentanaDatos extends javax.swing.JFrame {
     /**
      * Creates new form ventanaDatos
      */
-    public VentanaDato() {
+    public VentanaDatos() {
         initComponents();
     }
 
@@ -30,32 +28,39 @@ public class VentanaDato extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ingresoNombre = new javax.swing.JLabel();
-        txtIngresoNombre = new javax.swing.JTextField();
+        lblIngresoNombre = new javax.swing.JLabel();
+        txtFieldNombre = new javax.swing.JTextField();
         btnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ingresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
-        ingresoNombre.setForeground(new java.awt.Color(0, 102, 51));
-        ingresoNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ingresoNombre.setText("INGRESE SU NOMBRE");
-        getContentPane().add(ingresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 430, 50));
+        lblIngresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        lblIngresoNombre.setForeground(new java.awt.Color(0, 102, 51));
+        lblIngresoNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIngresoNombre.setText("INGRESE SU NOMBRE");
+        getContentPane().add(lblIngresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 430, 50));
 
-        txtIngresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        txtIngresoNombre.setForeground(new java.awt.Color(0, 102, 102));
-        txtIngresoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtIngresoNombre.setText("JUGADOR 1");
-        txtIngresoNombre.setCaretColor(new java.awt.Color(255, 255, 204));
-        txtIngresoNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIngresoNombreActionPerformed(evt);
+        txtFieldNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        txtFieldNombre.setForeground(new java.awt.Color(0, 102, 102));
+        txtFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFieldNombre.setText("JUGADOR 1");
+        txtFieldNombre.setCaretColor(new java.awt.Color(255, 255, 204));
+        txtFieldNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFieldNombreMouseClicked(evt);
             }
         });
-        getContentPane().add(txtIngresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 300, -1));
+        txtFieldNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldNombreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 300, -1));
 
         btnOk.setBackground(new java.awt.Color(255, 255, 204));
         btnOk.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
@@ -66,28 +71,32 @@ public class VentanaDato extends javax.swing.JFrame {
                 btnOkMouseClicked(evt);
             }
         });
-        btnOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt);
-            }
-        });
         getContentPane().add(btnOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 130, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIngresoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngresoNombreActionPerformed
+    private void txtFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIngresoNombreActionPerformed
+    }//GEN-LAST:event_txtFieldNombreActionPerformed
 
     private void btnOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOkMouseClicked
         // TODO add your handling code here:
+        if("JUGADOR 1".equals(txtFieldNombre.getText()) || "".equals(txtFieldNombre.getText())){
+           JOptionPane.showMessageDialog(this, "Ingresa un nombre valido", "", 1);
+        }else{
+            ventanaJuego.jugador.setNombre(txtFieldNombre.getText());
+            this.dispose();
+            ventanaJuego unaVentanaJuego = new ventanaJuego();
+            unaVentanaJuego.setVisible(true);
+        }
+
     }//GEN-LAST:event_btnOkMouseClicked
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        String nombreJugador = txtIngresoNombre.getText();
-        Jugador jugador1 = new Jugador (nombreJugador);
-    }//GEN-LAST:event_btnOkActionPerformed
+    private void txtFieldNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFieldNombreMouseClicked
+        // TODO add your handling code here:
+        txtFieldNombre.setText("");
+    }//GEN-LAST:event_txtFieldNombreMouseClicked
 
     /**
      * @param args the command line arguments
@@ -106,29 +115,28 @@ public class VentanaDato extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaDato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaDato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaDato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaDato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
-        
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaDato().setVisible(true);
-                
+                new VentanaDatos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOk;
-    private javax.swing.JLabel ingresoNombre;
-    private javax.swing.JTextField txtIngresoNombre;
+    private javax.swing.JLabel lblIngresoNombre;
+    private javax.swing.JTextField txtFieldNombre;
     // End of variables declaration//GEN-END:variables
 }

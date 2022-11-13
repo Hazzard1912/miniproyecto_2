@@ -19,10 +19,10 @@ import javax.swing.Timer;
 public class ventanaJuego extends javax.swing.JFrame {
     
     /**
-     * Creates new form VentanaJuego
+     * Creates new form ventanaJuego
      */
     private Ronda ronda;
-    private Jugador jugador;
+    public static Jugador jugador = new Jugador();
 
     private Figura figuraReto;
     private Figura figura1;
@@ -40,8 +40,6 @@ public class ventanaJuego extends javax.swing.JFrame {
     
     public ventanaJuego() {
         ronda = new Ronda();
-        jugador = new Jugador();
-        
         figuraReto = new Figura();
         figura1 = new Figura();
         figura2 = new Figura();
@@ -250,6 +248,18 @@ public class ventanaJuego extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ventanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
