@@ -15,7 +15,7 @@ import javax.swing.Timer;
  * Jhonnier Hernandez
  * Juan Cifuentes
  */
-public class VentanaJuego extends javax.swing.JFrame {
+public class ventanaJuego extends javax.swing.JFrame {
     
     /**
      * Creates new form VentanaJuego
@@ -37,7 +37,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private JuegoMemorable juego;
     
     
-    public VentanaJuego() {
+    public ventanaJuego() {
         ronda = new Ronda();
         jugador = new Jugador();
         
@@ -111,7 +111,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblContador.setText("|"+tiempoDeObservacion);
         getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, 40));
 
-        lblFicha1.setBackground(new java.awt.Color(240, 240, 240));
         lblFicha1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblFicha1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -242,21 +241,23 @@ public class VentanaJuego extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ventanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaJuego().setVisible(true);
+                new ventanaJuego().setVisible(true);
             }
         });
     }
