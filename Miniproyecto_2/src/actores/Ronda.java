@@ -9,6 +9,7 @@ package actores;
  * @authors:
  * Jhonnier Hernandez
  * Juan Cifuentes
+ * Alejandra Carvajal
  */
 
 public class Ronda {

@@ -9,6 +9,7 @@ package actores;
  * @authors:
  * Jhonnier Hernandez
  * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class Figura {
     private static String[] vector_de_imagenes = {"/imagenes/figuras/circulo.png","/imagenes/figuras/cuadrado.png","/imagenes/figuras/triangulo.png"};

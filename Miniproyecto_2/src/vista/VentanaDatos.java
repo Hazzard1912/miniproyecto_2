@@ -4,7 +4,6 @@
  */
 package vista;
 
-import actores.Jugador;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,7 +27,7 @@ public class VentanaDatos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblIngresoNombre = new javax.swing.JLabel();
+        ingresoNombre = new javax.swing.JLabel();
         txtFieldNombre = new javax.swing.JTextField();
         btnOk = new javax.swing.JButton();
 
@@ -39,11 +38,11 @@ public class VentanaDatos extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblIngresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
-        lblIngresoNombre.setForeground(new java.awt.Color(0, 102, 51));
-        lblIngresoNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIngresoNombre.setText("INGRESE SU NOMBRE");
-        getContentPane().add(lblIngresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 430, 50));
+        ingresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        ingresoNombre.setForeground(new java.awt.Color(0, 102, 51));
+        ingresoNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ingresoNombre.setText("INGRESE SU NOMBRE");
+        getContentPane().add(ingresoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 430, 50));
 
         txtFieldNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         txtFieldNombre.setForeground(new java.awt.Color(0, 102, 102));
@@ -123,9 +122,6 @@ public class VentanaDatos extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -136,7 +132,7 @@ public class VentanaDatos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOk;
-    private javax.swing.JLabel lblIngresoNombre;
+    private javax.swing.JLabel ingresoNombre;
     private javax.swing.JTextField txtFieldNombre;
     // End of variables declaration//GEN-END:variables
 }

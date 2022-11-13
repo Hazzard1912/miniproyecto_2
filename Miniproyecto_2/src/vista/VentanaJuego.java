@@ -14,6 +14,7 @@ import javax.swing.Timer;
  * @authors:
  * Jhonnier Hernandez
  * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaJuego extends javax.swing.JFrame {
     
@@ -22,7 +23,6 @@ public class VentanaJuego extends javax.swing.JFrame {
      */
     private Ronda ronda;
     public static Jugador jugador = new Jugador();
-
     private Figura figuraReto;
     private Figura figura1;
     private Figura figura2;
@@ -254,6 +254,30 @@ public class VentanaJuego extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
