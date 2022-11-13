@@ -88,7 +88,7 @@ public class VentanaInicio extends javax.swing.JFrame {
         //Debe ejecutar la ventana datos.
 
         
-        ventanaJuego unaVentanaJuego = new ventanaJuego();
+        VentanaJuego unaVentanaJuego = new VentanaJuego();
         unaVentanaJuego.setVisible(true);
 
         VentanaDatos unaVentanaDatos = new VentanaDatos();
