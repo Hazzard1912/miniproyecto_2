@@ -633,6 +633,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         }
     }
     
+    // Pone el juego como si no hubiera iniciado la ronda. Este metodo se ejecuta cuando se acaba una ronda
     public void establecerElementosComoDeInicioDeRonda(){
         System.out.println("Juego Terminado");
         rondaIniciada = false;
@@ -649,13 +650,15 @@ public class VentanaJuego extends javax.swing.JFrame {
         figuraReto.setRutaDeImagen();
     }
     
+    // Inicia una nueva ronda. Este metodo se ejecuta cuando se requiere iniciar otra ronda
     public void iniciarRonda(){
         rondaIniciada = true;
         ronda.mas1NumeroDeRonda();
         figurasAMostrar();
         contador.start();
     }
-    
+
+    // Muestra la figura que contiene la ficha y compara si es la que se esta pidiendo. Este metodo se ejecuta cuando se le da click a una ficha despues de terminado el contador
     public void mostrarFichaYCompararFigura(javax.swing.JLabel lblFichaX, Figura figuraX){
         figuraX.setRutaDeImagenTo(lblFichaX);
         String icono = figuraX.getRutaDeImagen();
@@ -668,7 +671,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         System.out.println("icono = " + icono);
         System.out.println("iconoComparar = " + iconoComparar);
     }
-    
+
+    // Finaliza una ronda si ya se encontraron todas las fichas con la descripcion dada. Este metodo se ejecuta cuando se le da click a una ficha despues de terminado el contador
     public void finalizarOContinuarRonda(Figura figuraX){
         rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX, figuraReto);
         if (rondaFinalizada == true){
@@ -676,6 +680,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         }
     }
     
+    // Establece que figuras y sobre que fichas se van a mostrar (Nota: cada tres rondas se muestra una figura mas). Este metodo se ejecuta cuando se inicia una ronda
     public void figurasAMostrar(){
         
         figura1.anularRutaDeImagen(lblFicha1);
