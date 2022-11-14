@@ -27,7 +27,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Ronda ronda;
     public static Jugador jugador = new Jugador();
     private Figura figuraReto;
-    private List<javax.swing.JLabel> lblFichas = new ArrayList<>() {{ add(lblFicha1); add(lblFicha2); add(lblFicha3); 
+    private List<javax.swing.JLabel> listaLabelsFichas = new ArrayList<>() {{ add(lblFicha1); add(lblFicha2); add(lblFicha3); 
     add(lblFicha4); add(lblFicha5); add(lblFicha6); add(lblFicha7); add(lblFicha8); add(lblFicha9); add(lblFicha10);
     add(lblFicha11); add(lblFicha12); add(lblFicha13); add(lblFicha14); add(lblFicha15); add(lblFicha16); add(lblFicha17);
     add(lblFicha18); add(lblFicha19); add(lblFicha20); add(lblFicha21); add(lblFicha22); add(lblFicha23);
@@ -80,10 +80,11 @@ public class VentanaJuego extends javax.swing.JFrame {
         
                 
         initComponents();
-        for(int i = 0; i < lblFichas.size(); i++){
+        for(int i = 0; i < listaLabelsFichas.size(); i++){
             Figura figuraX = new Figura();
             figuras.add(figuraX);
         }
+        
     }
 
     /**
