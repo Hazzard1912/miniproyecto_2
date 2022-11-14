@@ -100,7 +100,7 @@ public class VentanaContinuarJugando extends javax.swing.JFrame {
     }//GEN-LAST:event_siContinuarActionPerformed
 
     private void noContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noContinuarActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_noContinuarActionPerformed
 
     /**
