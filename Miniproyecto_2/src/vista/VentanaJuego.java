@@ -33,6 +33,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     add(lblFicha18); add(lblFicha19); add(lblFicha20); add(lblFicha21); add(lblFicha22); add(lblFicha23);
     add(lblFicha24); add(lblFicha25); add(lblFicha26); add(lblFicha27); add(lblFicha28); add(lblFicha29); add(lblFicha30);
     add(lblFicha31); add(lblFicha32); add(lblFicha33); add(lblFicha34); add(lblFicha35); add(lblFicha36);}};
+    private List<Figura> figuras = new ArrayList<>();
+    
     private boolean rondaIniciada; 
     private boolean rondaFinalizada;
     private boolean fichasClickeables;
@@ -59,7 +61,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 lblContador.setText("|"+tiempoDeObservacion);
                 if (tiempoDeObservacion == 0)
                 {
-                    contador.stop();
+                    /*contador.stop();
                     lblFicha1.setIcon(null);
                     lblFicha2.setIcon(null);
                     lblFicha3.setIcon(null);
@@ -69,14 +71,19 @@ public class VentanaJuego extends javax.swing.JFrame {
                     figuraReto.setRutaDeImagenTo(lblFichaReto);
                     juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
 
-                    fichasClickeables = true;
+                    fichasClickeables = true;*/
                 }
             }
         });
         
         juego = new JuegoMemorable(jugador);
+        
                 
         initComponents();
+        for(int i = 0; i < lblFichas.size(); i++){
+            Figura figuraX = new Figura();
+            figuras.add(figuraX);
+        }
     }
 
     /**
@@ -466,7 +473,6 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
         // TODO add your handling code here:
-        lblFichaXMouseClicked(lblFicha1, figura1);
     }//GEN-LAST:event_lblFicha1MouseClicked
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
@@ -644,9 +650,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblFicha2.setIcon(null);
         lblFicha3.setIcon(null);
         lblFichaReto.setIcon(null);
-        figura1.setRutaDeImagen();
-        figura2.setRutaDeImagen();
-        figura3.setRutaDeImagen();
         figuraReto.setRutaDeImagen();
     }
     
