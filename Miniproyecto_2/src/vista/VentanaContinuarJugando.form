@@ -68,7 +68,7 @@
           <Color blue="33" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#xbf;DESEA CONTINUAR JUGANDO?"/>
+        <Property name="text" type="java.lang.String" value="&#xbf;DESEA VOLVER A JUGAR?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="siContinuar">
@@ -84,6 +84,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="SI"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="siContinuarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="noContinuar">
       <Properties>
@@ -98,6 +101,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="NO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noContinuarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

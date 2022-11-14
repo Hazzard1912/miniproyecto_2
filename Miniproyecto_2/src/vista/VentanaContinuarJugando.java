@@ -37,17 +37,27 @@ public class VentanaContinuarJugando extends javax.swing.JFrame {
         deseaContinuarJugando.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 22)); // NOI18N
         deseaContinuarJugando.setForeground(new java.awt.Color(0, 102, 51));
         deseaContinuarJugando.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        deseaContinuarJugando.setText("¿DESEA CONTINUAR JUGANDO?");
+        deseaContinuarJugando.setText("¿DESEA VOLVER A JUGAR?");
 
         siContinuar.setBackground(new java.awt.Color(204, 255, 204));
         siContinuar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         siContinuar.setForeground(new java.awt.Color(102, 102, 0));
         siContinuar.setText("SI");
+        siContinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                siContinuarActionPerformed(evt);
+            }
+        });
 
         noContinuar.setBackground(new java.awt.Color(255, 153, 153));
         noContinuar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         noContinuar.setForeground(new java.awt.Color(102, 102, 0));
         noContinuar.setText("NO");
+        noContinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noContinuarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +88,20 @@ public class VentanaContinuarJugando extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void siContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siContinuarActionPerformed
+        
+        VentanaInicio newframe = new VentanaInicio ();
+        
+        newframe.setVisible(true);
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_siContinuarActionPerformed
+
+    private void noContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noContinuarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_noContinuarActionPerformed
 
     /**
      * @param args the command line arguments
