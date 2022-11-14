@@ -16,7 +16,6 @@ public class Ronda {
     private int numeroDeRonda;
     
     private int cantidadAciertos;
-    private int cantidadFallos;
     private int puntajeTotal;
     private int tiempoJugado;
     
@@ -24,7 +23,6 @@ public class Ronda {
     public Ronda(){
         numeroDeRonda = 0;
         cantidadAciertos = 0;
-        cantidadFallos = 0;
         puntajeTotal = 0;
         tiempoJugado = 0;
     }
@@ -35,14 +33,6 @@ public class Ronda {
 
     public void setCantidadAciertos(int cantidadAciertos) {
         this.cantidadAciertos = cantidadAciertos;
-    }
-
-    public int getCantidadFallos() {
-        return cantidadFallos;
-    }
-
-    public void setCantidadFallos(int cantidadFallos) {
-        this.cantidadFallos = cantidadFallos;
     }
 
     public int getPuntajeTotal() {

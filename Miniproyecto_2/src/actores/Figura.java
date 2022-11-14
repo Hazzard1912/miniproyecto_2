@@ -4,13 +4,20 @@
  */
 package actores;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 /**
  *
  * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
  */
 public class Figura {
 
-    private static String[] listaDeRutasDeImagenes = {"/imagenes/figuras/circulo.png", "/imagenes/figuras/cuadrado.png", "/imagenes/figuras/triangulo.png"};
+    private static List<String>listaDeRutasDeImagenes = new ArrayList<>(Arrays.asList("/imagenes/figuras/circulo.png", "/imagenes/figuras/circuloverde.png", 
+            "/imagenes/figuras/circulorojo.png", "/imagenes/figuras/triangulo.png", "/imagenes/figuras/trianguloverde.png", "/imagenes/figuras/triangulorojo.png",
+            "/imagenes/figuras/cuadrado.png", "/imagenes/figuras/cuadradoverde.png", "/imagenes/figuras/cuadradorojo.png"));
     private String rutaDeImagen;
     private boolean setRutaDeImagenSinUsar;
     private boolean figuraObservada;
@@ -43,8 +50,8 @@ public class Figura {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagenSinUsar = false;
         }
-        int numeroRandom = (int) (Math.random() * 3);
-        rutaDeImagen = listaDeRutasDeImagenes[numeroRandom];
+        int numeroRandom = (int)(Math.random() * (listaDeRutasDeImagenes.size() - 1));
+        rutaDeImagen = listaDeRutasDeImagenes.get(numeroRandom);
 
         figuraObservada = false;
     }

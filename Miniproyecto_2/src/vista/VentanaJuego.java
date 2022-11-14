@@ -5,10 +5,11 @@
 package vista;
 
 import actores.*;
-import java.awt.List;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.Timer;
 
 /**
@@ -26,11 +27,12 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Ronda ronda;
     public static Jugador jugador = new Jugador();
     private Figura figuraReto;
-    private Figura figura1;
-    private Figura figura2;
-    private Figura figura3;
-    private javax.swing.JLabel[] lblFicha = new javax.swing.JLabel[3];
-    
+    private List<javax.swing.JLabel> lblFichas = new ArrayList<>() {{ add(lblFicha1); add(lblFicha2); add(lblFicha3); 
+    add(lblFicha4); add(lblFicha5); add(lblFicha6); add(lblFicha7); add(lblFicha8); add(lblFicha9); add(lblFicha10);
+    add(lblFicha11); add(lblFicha12); add(lblFicha13); add(lblFicha14); add(lblFicha15); add(lblFicha16); add(lblFicha17);
+    add(lblFicha18); add(lblFicha19); add(lblFicha20); add(lblFicha21); add(lblFicha22); add(lblFicha23);
+    add(lblFicha24); add(lblFicha25); add(lblFicha26); add(lblFicha27); add(lblFicha28); add(lblFicha29); add(lblFicha30);
+    add(lblFicha31); add(lblFicha32); add(lblFicha33); add(lblFicha34); add(lblFicha35); add(lblFicha36);}};
     private boolean rondaIniciada; 
     private boolean rondaFinalizada;
     private boolean fichasClickeables;
@@ -44,10 +46,6 @@ public class VentanaJuego extends javax.swing.JFrame {
     public VentanaJuego() {
         ronda = new Ronda();
         figuraReto = new Figura();
-        figura1 = new Figura();
-        figura2 = new Figura();
-        figura3 = new Figura();
-        
         rondaIniciada = false;
         rondaFinalizada = false;
         fichasClickeables = true;
@@ -79,10 +77,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         juego = new JuegoMemorable(jugador);
                 
         initComponents();
-        
-        lblFicha[0] = lblFicha1;
-        lblFicha[1] = lblFicha2;
-        lblFicha[2] = lblFicha3;
     }
 
     /**
