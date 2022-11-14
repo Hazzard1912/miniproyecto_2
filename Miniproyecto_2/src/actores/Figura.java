@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import javax.swing.JLabel;
 
 /**
  *
@@ -26,6 +27,8 @@ public class Figura {
     private boolean setRutaDeImagenSinUsar;
     // Este atributo indica si la figura ya se a observado (o revelado despues de que el contador finalizo)
     private boolean figuraObservada;
+    
+    private javax.swing.JLabel lblFichaX;
 
     private String forma;
     private String color;
@@ -72,7 +75,7 @@ public class Figura {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagen();
         }
-        labelX.setIcon(new javax.swing.ImageIcon(getClass().getResource(rutaDeImagen)));
+        this.lblFichaX.setIcon(new javax.swing.ImageIcon(getClass().getResource(rutaDeImagen)));
     }
 
     // Cambia el atributo figuraObservada a falso. Este metodo se ejecuta cuando se da click a una ficha despues de finalizado el contador
@@ -90,7 +93,11 @@ public class Figura {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagenSinUsar = false;
         }
-        labelX.setIcon(null);
+        this.lblFichaX.setIcon(null);
         rutaDeImagen = null;
+    }
+    
+        public void relacionarLabel(javax.swing.JLabel lblFichaX) {
+        this.lblFichaX = lblFichaX;
     }
 }
