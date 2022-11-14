@@ -7,6 +7,7 @@ package vista;
 import actores.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.Timer;
 
 /**
@@ -28,7 +29,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Figura figura2;
     private Figura figura3;
     
-    private Figura[] listaDeFiguras = {figura1, figura2, figura3};
+    private Figura[] figura = new Figura[3];
+    private javax.swing.JLabel[] lblFicha = new javax.swing.JLabel[3];
     
     private boolean rondaIniciada; 
     private boolean rondaFinalizada;
@@ -47,6 +49,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         figura2 = new Figura();
         figura3 = new Figura();
         
+        figura[0] = figura1;
+        figura[1] = figura2;
+        figura[2] = figura3;
+        
         rondaIniciada = false;
         rondaFinalizada = false;
         fichasClickeables = true;
@@ -64,15 +70,12 @@ public class VentanaJuego extends javax.swing.JFrame {
                     lblFicha1.setIcon(null);
                     lblFicha2.setIcon(null);
                     lblFicha3.setIcon(null);
-                    while ((figuraReto.getRutaDeImagen() != figura1.getRutaDeImagen()) && (figuraReto.getRutaDeImagen() != figura2.getRutaDeImagen()) && (figuraReto.getRutaDeImagen() != figura3.getRutaDeImagen())){ // && (figuraReto.getTutaDeImagen == null)
-                        System.out.println(figuraReto.getRutaDeImagen());
-                        System.out.println(figura1.getRutaDeImagen());
-                        System.out.println(figura2.getRutaDeImagen());
-                        System.out.println(figura3.getRutaDeImagen());
+                    while (((figuraReto.getRutaDeImagen() != figura1.getRutaDeImagen()) && (figuraReto.getRutaDeImagen() != figura2.getRutaDeImagen()) && (figuraReto.getRutaDeImagen() != figura3.getRutaDeImagen())) || (figuraReto.getRutaDeImagen() == null)){
                         figuraReto.setRutaDeImagen();
                     }
                     figuraReto.setRutaDeImagenTo(lblFichaReto);
                     juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
+
                     fichasClickeables = true;
                 }
             }
@@ -81,6 +84,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         juego = new JuegoMemorable(jugador);
                 
         initComponents();
+        
+        lblFicha[0] = lblFicha1;
+        lblFicha[1] = lblFicha2;
+        lblFicha[2] = lblFicha3;
     }
 
     /**
@@ -171,6 +178,12 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblFichaXMouseClicked(lblFicha3, figura3);
     }//GEN-LAST:event_lblFicha3MouseClicked
 
+    /** Funcion general para todos las fichas.
+       Si se da click a una ficha y este es clickeable se ejecuta, si no es clickeable no se ejecuta.
+        - Si se ejecuta se evalua si la ronda ya ha iniciado o no:
+         - Si la ronda no ha iniciado, se inicia la ronda.
+         - Si la ronda ya ha iniciado, se muestra la figura que esconde la ficha y determina si la ronda debe continuar o finalizar.
+    */
     public void lblFichaXMouseClicked(javax.swing.JLabel lblFichaX, Figura figuraX) {
         if (fichasClickeables){
             if(rondaIniciada == false){
@@ -178,7 +191,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 iniciarRonda();
             }
             else{
-                if (! figuraX.getFiguraObservada()){
+                if (!figuraX.getFiguraObservada() && figuraX.getRutaDeImagen() != null){
                     figuraX.observarFigura();
                     
                     mostrarFichaYCompararFigura(lblFichaX,figuraX);
@@ -207,9 +220,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     
     public void iniciarRonda(){
         rondaIniciada = true;
-        figura1.setRutaDeImagenTo(lblFicha1);
-        figura2.setRutaDeImagenTo(lblFicha2);
-        figura3.setRutaDeImagenTo(lblFicha3);
+        ronda.mas1NumeroDeRonda();
+        figurasAMostrar();
         contador.start();
     }
     
@@ -227,34 +239,107 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
     
     public void finalizarOContinuarRonda(Figura figuraX){
-        rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX);
+        rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX, figuraReto);
         if (rondaFinalizada == true){
             establecerElementosComoDeInicioDeRonda();
         }
     }
     
     public void figurasAMostrar(){
-        ronda.mas1NumeroDeRonda();
+        
+        figura1.anularRutaDeImagen(lblFicha1);
+        figura2.anularRutaDeImagen(lblFicha2);
+        figura3.anularRutaDeImagen(lblFicha3);
+        
+        boolean figura1Seted = false;
+        boolean figura2Seted = false;
+        boolean figura3Seted = false;
+        
+        int figurasSeted = 0;
         
         if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
-            int numeroRandom = (int) (Math.random()*3);
-            switch (numeroRandom) {
-                case 0:
-                    figura1.setRutaDeImagen();
-                    break;
-                case 1:
-                    figura2.setRutaDeImagen();
-                    break;
-                case 2:
-                    figura3.setRutaDeImagen();
-                    break;
-                default:
-                    break;
+            int numeroRandom2 = (int) (Math.random()*3);
+            if (!figura1Seted && numeroRandom2 == 0){
+                figura1.setRutaDeImagen();
+                figura1.setRutaDeImagenTo(lblFicha1);
+                figura1Seted = true;
+                figurasSeted++;
+            } else if (!figura2Seted && numeroRandom2 == 1){
+                figura2.setRutaDeImagen();
+                figura2.setRutaDeImagenTo(lblFicha2);
+                figura2Seted = true;
+                figurasSeted++;
+            } else if (!figura3Seted && numeroRandom2 == 2){
+                figura3.setRutaDeImagen();
+                figura3.setRutaDeImagenTo(lblFicha3);
+                figura3Seted = true;
+                figurasSeted++;
             }
+
+//            int numeroRandom2;
+//            while (figurasSeted < 1){
+//                numeroRandom2 = (int) (Math.random()*3);
+//                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+//                if (!listaDeNumeros.contains(numeroRandom2)){
+//                    listaDeNumeros.add(numeroRandom2);
+//                    System.out.println("PTM");
+//                    figura[numeroRandom2].setRutaDeImagen();
+//                    System.out.println("PTM");
+//                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+//                    System.out.println("PTM");
+//                    figurasSeted++;
+//                }
+//            }
         } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
+            while (figurasSeted < 2){
+                int numeroRandom2 = (int) (Math.random()*3);
+                if (!figura1Seted && numeroRandom2 == 0){
+                    figura1.setRutaDeImagen();
+                    figura1.setRutaDeImagenTo(lblFicha1);
+                    figura1Seted = true;
+                    figurasSeted++;
+                } else if (!figura2Seted && numeroRandom2 == 1){
+                    figura2.setRutaDeImagen();
+                    figura2.setRutaDeImagenTo(lblFicha2);
+                    figura2Seted = true;
+                    figurasSeted++;
+                } else if (!figura3Seted && numeroRandom2 == 2){
+                    figura3.setRutaDeImagen();
+                    figura3.setRutaDeImagenTo(lblFicha3);
+                    figura3Seted = true;
+                    figurasSeted++;
+                }
+            }
             
+//            while (figurasSeted < 2){
+//                int numeroRandom2 = (int) (Math.random()*3);
+//                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+//                if (!listaDeNumeros.contains(numeroRandom2)){
+//                    listaDeNumeros.add(numeroRandom2);
+//                    figura[numeroRandom2].setRutaDeImagen();
+//                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+//                    figurasSeted++;
+//                }
+//            }
         } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
-            
+            figura1.setRutaDeImagen();
+            figura1.setRutaDeImagenTo(lblFicha1);
+            figura2.setRutaDeImagen();
+            figura2.setRutaDeImagenTo(lblFicha2);
+            figura3.setRutaDeImagen();
+            figura3.setRutaDeImagenTo(lblFicha3);
+
+//            int numeroRandom2;
+//            while (figurasSeted < 3){
+//                numeroRandom2 = (int) (Math.random()*3);
+//                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+//                if (!listaDeNumeros.contains(numeroRandom2)){
+//                    listaDeNumeros.add(numeroRandom2);
+//                    figura[numeroRandom2].setRutaDeImagen();
+//                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+//                    figurasSeted++;
+//                }
+//            }
         }
     }
     

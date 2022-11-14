@@ -58,11 +58,11 @@ public class Figura {
         return rutaDeImagen;
     }
     
-    public void setRutaDeImagenTo(javax.swing.JLabel un_label) {
+    public void setRutaDeImagenTo(javax.swing.JLabel labelX) {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagen();
         }
-        un_label.setIcon(new javax.swing.ImageIcon(getClass().getResource(rutaDeImagen)));
+        labelX.setIcon(new javax.swing.ImageIcon(getClass().getResource(rutaDeImagen)));
     }
     
     public void observarFigura(){
@@ -73,7 +73,11 @@ public class Figura {
         return figuraObservada;
     }
     
-    public void anularRutaDeImagen(){
-        
+    public void anularRutaDeImagen(javax.swing.JLabel labelX){
+        if (setRutaDeImagenSinUsar == true) {
+            setRutaDeImagenSinUsar = false;
+        }
+        labelX.setIcon(null);
+        rutaDeImagen = null;
     }
 }

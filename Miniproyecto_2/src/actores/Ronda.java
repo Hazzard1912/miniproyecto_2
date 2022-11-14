@@ -22,7 +22,7 @@ public class Ronda {
     
     
     public Ronda(){
-        numeroDeRonda = 1;
+        numeroDeRonda = 0;
         cantidadAciertos = 0;
         cantidadFallos = 0;
         puntajeTotal = 0;
