@@ -6,10 +6,7 @@ package vista;
 
 /**
  *
- * @authors:
- * Jhonnier Hernandez
- * Juan Cifuentes
- * Alejandra Carvajal
+ * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
  */
 public class VentanaParaQueSirve extends javax.swing.JFrame {
 

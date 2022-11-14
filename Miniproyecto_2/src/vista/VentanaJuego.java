@@ -5,6 +5,7 @@
 package vista;
 
 import actores.*;
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -28,8 +29,6 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Figura figura1;
     private Figura figura2;
     private Figura figura3;
-    
-    private Figura[] figura = new Figura[3];
     private javax.swing.JLabel[] lblFicha = new javax.swing.JLabel[3];
     
     private boolean rondaIniciada; 
@@ -48,10 +47,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         figura1 = new Figura();
         figura2 = new Figura();
         figura3 = new Figura();
-        
-        figura[0] = figura1;
-        figura[1] = figura2;
-        figura[2] = figura3;
         
         rondaIniciada = false;
         rondaFinalizada = false;
@@ -99,34 +94,56 @@ public class VentanaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblJugador = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
-        lblContador = new javax.swing.JLabel();
         lblFicha1 = new javax.swing.JLabel();
         lblFicha2 = new javax.swing.JLabel();
         lblFicha3 = new javax.swing.JLabel();
+        lblFicha4 = new javax.swing.JLabel();
+        lblFicha5 = new javax.swing.JLabel();
+        lblFicha6 = new javax.swing.JLabel();
+        lblFicha7 = new javax.swing.JLabel();
+        lblFicha8 = new javax.swing.JLabel();
+        lblFicha9 = new javax.swing.JLabel();
+        lblFicha10 = new javax.swing.JLabel();
+        lblFicha11 = new javax.swing.JLabel();
+        lblFicha12 = new javax.swing.JLabel();
+        lblFicha13 = new javax.swing.JLabel();
+        lblFicha14 = new javax.swing.JLabel();
+        lblFicha15 = new javax.swing.JLabel();
+        lblFicha16 = new javax.swing.JLabel();
+        lblFicha17 = new javax.swing.JLabel();
+        lblFicha18 = new javax.swing.JLabel();
+        lblFicha19 = new javax.swing.JLabel();
+        lblFicha20 = new javax.swing.JLabel();
+        lblFicha21 = new javax.swing.JLabel();
+        lblFicha22 = new javax.swing.JLabel();
+        lblFicha23 = new javax.swing.JLabel();
+        lblFicha24 = new javax.swing.JLabel();
+        lblFicha25 = new javax.swing.JLabel();
+        lblFicha26 = new javax.swing.JLabel();
+        lblFicha27 = new javax.swing.JLabel();
+        lblFicha28 = new javax.swing.JLabel();
+        lblFicha29 = new javax.swing.JLabel();
+        lblFicha30 = new javax.swing.JLabel();
+        lblFicha31 = new javax.swing.JLabel();
+        lblFicha32 = new javax.swing.JLabel();
+        lblFicha33 = new javax.swing.JLabel();
+        lblFicha34 = new javax.swing.JLabel();
+        lblFicha35 = new javax.swing.JLabel();
+        lblFicha36 = new javax.swing.JLabel();
+        lblVida3 = new javax.swing.JLabel();
+        lblVida2 = new javax.swing.JLabel();
+        lblVida1 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblJugador = new javax.swing.JLabel();
+        lblContador = new javax.swing.JLabel();
         lblFichaReto = new javax.swing.JLabel();
         contenedorPpal = new javax.swing.JPanel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblJugador.setFont(new java.awt.Font("Malgun Gothic", 0, 30)); // NOI18N
-        lblJugador.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblJugador.setText("JUGADOR: ");
-        getContentPane().add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 160, 40));
-
-        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(255, 0, 0));
-        lblNombre.setText(jugador.getNombre());
-        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 190, 40));
-
-        lblContador.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        lblContador.setForeground(new java.awt.Color(255, 0, 0));
-        lblContador.setText("|"+tiempoDeObservacion);
-        getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, 40));
 
         lblFicha1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblFicha1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -134,7 +151,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 lblFicha1MouseClicked(evt);
             }
         });
-        getContentPane().add(lblFicha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 60, 100, 170));
+        getContentPane().add(lblFicha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 82, 70, 70));
 
         lblFicha2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblFicha2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,7 +159,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 lblFicha2MouseClicked(evt);
             }
         });
-        getContentPane().add(lblFicha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 100, 170));
+        getContentPane().add(lblFicha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 82, 70, 70));
 
         lblFicha3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblFicha3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,12 +167,302 @@ public class VentanaJuego extends javax.swing.JFrame {
                 lblFicha3MouseClicked(evt);
             }
         });
-        getContentPane().add(lblFicha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 60, 100, 170));
+        getContentPane().add(lblFicha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 82, 70, 70));
+
+        lblFicha4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha4, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 82, 70, 70));
+
+        lblFicha5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha5, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 82, 70, 70));
+
+        lblFicha6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha6MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha6, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 82, 70, 70));
+
+        lblFicha7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha7MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha7, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 82, 70, 70));
+
+        lblFicha8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha8MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha8, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 82, 70, 70));
+
+        lblFicha9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha9MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha9, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 82, 70, 70));
+
+        lblFicha10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha10MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha10, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 158, 70, 70));
+
+        lblFicha11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha11MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha11, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 158, 70, 70));
+
+        lblFicha12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha12MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha12, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 158, 70, 70));
+
+        lblFicha13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha13MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha13, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 158, 70, 70));
+
+        lblFicha14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha14MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha14, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 158, 70, 70));
+
+        lblFicha15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha15MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha15, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 158, 70, 70));
+
+        lblFicha16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha16MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha16, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 158, 70, 70));
+
+        lblFicha17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha17MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha17, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 158, 70, 70));
+
+        lblFicha18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha18MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha18, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 158, 70, 70));
+
+        lblFicha19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha19MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha19, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 236, 70, 70));
+
+        lblFicha20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha20MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha20, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 236, 70, 70));
+
+        lblFicha21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha21MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha21, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 236, 70, 70));
+
+        lblFicha22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha22MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha22, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 236, 70, 70));
+
+        lblFicha23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha23MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha23, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 236, 70, 70));
+
+        lblFicha24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha24MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha24, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 236, 70, 70));
+
+        lblFicha25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha25MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha25, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 236, 70, 70));
+
+        lblFicha26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha26MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha26, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 236, 70, 70));
+
+        lblFicha27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha27MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha27, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 236, 70, 70));
+
+        lblFicha28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha28MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha28, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 313, 70, 70));
+
+        lblFicha29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha29MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha29, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 313, 70, 70));
+
+        lblFicha30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha30MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha30, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 313, 70, 70));
+
+        lblFicha31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha31MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha31, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 313, 70, 70));
+
+        lblFicha32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha32MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha32, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 313, 70, 70));
+
+        lblFicha33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha33MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha33, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 313, 70, 70));
+
+        lblFicha34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha34MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha34, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 313, 70, 70));
+
+        lblFicha35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha35MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha35, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 313, 70, 70));
+
+        lblFicha36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFicha36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFicha36MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblFicha36, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 313, 70, 70));
+
+        lblVida3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/vidas/corazonSi.png"))); // NOI18N
+        getContentPane().add(lblVida3, new org.netbeans.lib.awtextra.AbsoluteConstraints(709, 17, 40, 40));
+
+        lblVida2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/vidas/corazonSi.png"))); // NOI18N
+        getContentPane().add(lblVida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 17, 40, 40));
+
+        lblVida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/vidas/corazonSi.png"))); // NOI18N
+        getContentPane().add(lblVida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 17, 40, 40));
+
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 0, 0));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre.setText(jugador.getNombre());
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 370, 40));
+
+        lblJugador.setFont(new java.awt.Font("Malgun Gothic", 0, 30)); // NOI18N
+        lblJugador.setForeground(new java.awt.Color(255, 255, 255));
+        lblJugador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblJugador.setText("JUGADOR: ");
+        getContentPane().add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 40));
+
+        lblContador.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        lblContador.setForeground(new java.awt.Color(255, 0, 0));
+        lblContador.setText("|"+tiempoDeObservacion);
+        getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 410, 70, 70));
         getContentPane().add(lblFichaReto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, 100, 170));
 
         contenedorPpal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background/plantilla.png"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background/ventanaJuego.png"))); // NOI18N
         contenedorPpal.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(contenedorPpal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
@@ -170,13 +477,143 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
         // TODO add your handling code here:
-        lblFichaXMouseClicked(lblFicha2, figura2);
     }//GEN-LAST:event_lblFicha2MouseClicked
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
         // TODO add your handling code here:
-        lblFichaXMouseClicked(lblFicha3, figura3);
     }//GEN-LAST:event_lblFicha3MouseClicked
+
+    private void lblFicha4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha4MouseClicked
+
+    private void lblFicha5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha5MouseClicked
+
+    private void lblFicha6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha6MouseClicked
+
+    private void lblFicha7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha7MouseClicked
+
+    private void lblFicha8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha8MouseClicked
+
+    private void lblFicha9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha9MouseClicked
+
+    private void lblFicha10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha10MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha10MouseClicked
+
+    private void lblFicha11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha11MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha11MouseClicked
+
+    private void lblFicha12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha12MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha12MouseClicked
+
+    private void lblFicha13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha13MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha13MouseClicked
+
+    private void lblFicha14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha14MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha14MouseClicked
+
+    private void lblFicha15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha15MouseClicked
+
+    private void lblFicha16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha16MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha16MouseClicked
+
+    private void lblFicha17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha17MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha17MouseClicked
+
+    private void lblFicha18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha18MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha18MouseClicked
+
+    private void lblFicha19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha19MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha19MouseClicked
+
+    private void lblFicha20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha20MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha20MouseClicked
+
+    private void lblFicha21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha21MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha21MouseClicked
+
+    private void lblFicha22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha22MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha22MouseClicked
+
+    private void lblFicha23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha23MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha23MouseClicked
+
+    private void lblFicha24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha24MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha24MouseClicked
+
+    private void lblFicha25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha25MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha25MouseClicked
+
+    private void lblFicha26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha26MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha26MouseClicked
+
+    private void lblFicha27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha27MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha27MouseClicked
+
+    private void lblFicha28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha28MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha28MouseClicked
+
+    private void lblFicha29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha29MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha29MouseClicked
+
+    private void lblFicha30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha30MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha30MouseClicked
+
+    private void lblFicha31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha31MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha31MouseClicked
+
+    private void lblFicha32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha32MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha32MouseClicked
+
+    private void lblFicha33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha33MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha33MouseClicked
+
+    private void lblFicha34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha34MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha34MouseClicked
+
+    private void lblFicha35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha35MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha35MouseClicked
+
+    private void lblFicha36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha36MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblFicha36MouseClicked
 
     /** Funcion general para todos las fichas.
        Si se da click a una ficha y este es clickeable se ejecuta, si no es clickeable no se ejecuta.
@@ -414,10 +851,46 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblContador;
     private javax.swing.JLabel lblFicha1;
+    private javax.swing.JLabel lblFicha10;
+    private javax.swing.JLabel lblFicha11;
+    private javax.swing.JLabel lblFicha12;
+    private javax.swing.JLabel lblFicha13;
+    private javax.swing.JLabel lblFicha14;
+    private javax.swing.JLabel lblFicha15;
+    private javax.swing.JLabel lblFicha16;
+    private javax.swing.JLabel lblFicha17;
+    private javax.swing.JLabel lblFicha18;
+    private javax.swing.JLabel lblFicha19;
     private javax.swing.JLabel lblFicha2;
+    private javax.swing.JLabel lblFicha20;
+    private javax.swing.JLabel lblFicha21;
+    private javax.swing.JLabel lblFicha22;
+    private javax.swing.JLabel lblFicha23;
+    private javax.swing.JLabel lblFicha24;
+    private javax.swing.JLabel lblFicha25;
+    private javax.swing.JLabel lblFicha26;
+    private javax.swing.JLabel lblFicha27;
+    private javax.swing.JLabel lblFicha28;
+    private javax.swing.JLabel lblFicha29;
     private javax.swing.JLabel lblFicha3;
+    private javax.swing.JLabel lblFicha30;
+    private javax.swing.JLabel lblFicha31;
+    private javax.swing.JLabel lblFicha32;
+    private javax.swing.JLabel lblFicha33;
+    private javax.swing.JLabel lblFicha34;
+    private javax.swing.JLabel lblFicha35;
+    private javax.swing.JLabel lblFicha36;
+    private javax.swing.JLabel lblFicha4;
+    private javax.swing.JLabel lblFicha5;
+    private javax.swing.JLabel lblFicha6;
+    private javax.swing.JLabel lblFicha7;
+    private javax.swing.JLabel lblFicha8;
+    private javax.swing.JLabel lblFicha9;
     private javax.swing.JLabel lblFichaReto;
     private javax.swing.JLabel lblJugador;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblVida1;
+    private javax.swing.JLabel lblVida2;
+    private javax.swing.JLabel lblVida3;
     // End of variables declaration//GEN-END:variables
 }

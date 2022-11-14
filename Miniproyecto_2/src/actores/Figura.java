@@ -6,24 +6,19 @@ package actores;
 
 /**
  *
- * @authors:
- * Jhonnier Hernandez
- * Juan Cifuentes
- * Alejandra Carvajal
+ * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
  */
 public class Figura {
-    private static String[] listaDeRutasDeImagenes = {"/imagenes/figuras/circulo.png","/imagenes/figuras/cuadrado.png","/imagenes/figuras/triangulo.png"};
+
+    private static String[] listaDeRutasDeImagenes = {"/imagenes/figuras/circulo.png", "/imagenes/figuras/cuadrado.png", "/imagenes/figuras/triangulo.png"};
     private String rutaDeImagen;
     private boolean setRutaDeImagenSinUsar;
     private boolean figuraObservada;
-    
+
     private String forma;
     private String color;
-    
-    //public Figura(String forma, String color){
-    public Figura(){
-//        this.forma = forma;
-  //      this.color = color;
+
+    public Figura() {
         setRutaDeImagenSinUsar = true;
         figuraObservada = false;
     }
@@ -43,37 +38,37 @@ public class Figura {
     public void setColor(String color) {
         this.color = color;
     }
-    
+
     public void setRutaDeImagen() {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagenSinUsar = false;
         }
-        int numeroRandom = (int) (Math.random()*3);
+        int numeroRandom = (int) (Math.random() * 3);
         rutaDeImagen = listaDeRutasDeImagenes[numeroRandom];
-        
+
         figuraObservada = false;
     }
-    
+
     public String getRutaDeImagen() {
         return rutaDeImagen;
     }
-    
+
     public void setRutaDeImagenTo(javax.swing.JLabel labelX) {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagen();
         }
         labelX.setIcon(new javax.swing.ImageIcon(getClass().getResource(rutaDeImagen)));
     }
-    
-    public void observarFigura(){
+
+    public void observarFigura() {
         figuraObservada = true;
     }
-    
-    public boolean getFiguraObservada (){
+
+    public boolean getFiguraObservada() {
         return figuraObservada;
     }
-    
-    public void anularRutaDeImagen(javax.swing.JLabel labelX){
+
+    public void anularRutaDeImagen(javax.swing.JLabel labelX) {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagenSinUsar = false;
         }

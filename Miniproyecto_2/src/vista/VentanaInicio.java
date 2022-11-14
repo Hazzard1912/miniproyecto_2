@@ -6,10 +6,7 @@ package vista;
 
 /**
  *
- * @authors:
- * Jhonnier Hernandez
- * Juan Cifuentes
- * Alejandra Carvajal
+ * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
  */
 public class VentanaInicio extends javax.swing.JFrame {
 
@@ -82,7 +79,7 @@ public class VentanaInicio extends javax.swing.JFrame {
 
     private void lblJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJugarMouseClicked
         //Debe ejecutar la ventana datos.
-        
+
         VentanaDatos unaVentanaDatos = new VentanaDatos();
         unaVentanaDatos.setVisible(true);
 

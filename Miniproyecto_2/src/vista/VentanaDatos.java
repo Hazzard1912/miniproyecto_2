@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
  * @author aleja
  */
 public class VentanaDatos extends javax.swing.JFrame {
+
     /**
      * Creates new form ventanaDatos
      */
@@ -81,9 +82,9 @@ public class VentanaDatos extends javax.swing.JFrame {
 
     private void btnOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOkMouseClicked
         // TODO add your handling code here:
-        if("JUGADOR 1".equals(txtFieldNombre.getText()) || "".equals(txtFieldNombre.getText())){
-           JOptionPane.showMessageDialog(this, "Ingresa un nombre valido", "", 1);
-        }else{
+        if ("JUGADOR 1".equals(txtFieldNombre.getText()) || "".equals(txtFieldNombre.getText())) {
+            JOptionPane.showMessageDialog(this, "Ingresa un nombre valido", "", 1);
+        } else {
             VentanaJuego.jugador.setNombre(txtFieldNombre.getText());
             this.dispose();
             VentanaJuego unaVentanaJuego = new VentanaJuego();

@@ -8,10 +8,7 @@ import java.awt.Cursor;
 
 /**
  *
- * @authors:
- * Jhonnier Hernandez
- * Juan Cifuentes
- * Alejandra Carvajal
+ * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
  */
 public class VentanaComoJugar extends javax.swing.JFrame {
 

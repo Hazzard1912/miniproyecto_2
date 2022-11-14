@@ -90,13 +90,13 @@ public class VentanaContinuarJugando extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siContinuarActionPerformed
-        
-        VentanaInicio newframe = new VentanaInicio ();
-        
+
+        VentanaInicio newframe = new VentanaInicio();
+
         newframe.setVisible(true);
-        
+
         this.dispose();
-        
+
     }//GEN-LAST:event_siContinuarActionPerformed
 
     private void noContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noContinuarActionPerformed
