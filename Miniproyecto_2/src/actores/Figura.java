@@ -14,17 +14,13 @@ import java.util.Random;
  * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
  */
 public class Figura {
-<<<<<<< HEAD
-
+    
+    // Es la lista de las rutas de las imagenes con figuras, es static porque solo se necesita una para todas las figuras.
     private static List<String>listaDeRutasDeImagenes = new ArrayList<>(Arrays.asList("/imagenes/figuras/circulo.png", "/imagenes/figuras/circuloverde.png", 
             "/imagenes/figuras/circulorojo.png", "/imagenes/figuras/triangulo.png", "/imagenes/figuras/trianguloverde.png", "/imagenes/figuras/triangulorojo.png",
             "/imagenes/figuras/cuadrado.png", "/imagenes/figuras/cuadradoverde.png", "/imagenes/figuras/cuadradorojo.png"));
-=======
     
-    // Es la lista de las rutas de las imagenes con figuras, es static porque solo se necesita una para todas las figuras.
-    private static String[] listaDeRutasDeImagenes = {"/imagenes/figuras/circulo.png", "/imagenes/figuras/cuadrado.png", "/imagenes/figuras/triangulo.png"};
-    // Este atributo indica la ruta de la imagen que tiene la figura (circulo, triangulo, cuadrado, etc), este puede cambiar con el metodo setRutaDeImagen()
->>>>>>> 6842c6cd55ffb96a205c8edaf9c3fa52fa17930e
+    // Este atributo contiene la ruta de la imagen.
     private String rutaDeImagen;
     // Este atributo indica si ya se ha usado el metodo setRutaDeImagen() en el objeto (instancia) creado
     private boolean setRutaDeImagenSinUsar;
