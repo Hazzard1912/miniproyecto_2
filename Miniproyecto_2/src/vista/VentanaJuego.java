@@ -685,89 +685,89 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
     
     // Establece que figuras y sobre que fichas se van a mostrar (Nota: cada tres rondas se muestra una figura mas). Este metodo se ejecuta cuando se inicia una ronda
-    public void figurasAMostrar(){
-        
-        figura1.anularRutaDeImagen(lblFicha1);
-        figura2.anularRutaDeImagen(lblFicha2);
-        figura3.anularRutaDeImagen(lblFicha3);
-        
-        boolean figura1Seted = false;
-        boolean figura2Seted = false;
-        boolean figura3Seted = false;
-        
-        int figurasSeted = 0;
-        
-        if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
-            int numeroRandom2 = (int) (Math.random()*3);
-            if (!figura1Seted && numeroRandom2 == 0){
-                figura1.setRutaDeImagen();
-                figura1.setRutaDeImagenTo(lblFicha1);
-                figura1Seted = true;
-                figurasSeted++;
-            } else if (!figura2Seted && numeroRandom2 == 1){
-                figura2.setRutaDeImagen();
-                figura2.setRutaDeImagenTo(lblFicha2);
-                figura2Seted = true;
-                figurasSeted++;
-            } else if (!figura3Seted && numeroRandom2 == 2){
-                figura3.setRutaDeImagen();
-                figura3.setRutaDeImagenTo(lblFicha3);
-                figura3Seted = true;
-                figurasSeted++;
-            }
-
-//            int numeroRandom2;
-//            while (figurasSeted < 1){
-//                numeroRandom2 = (int) (Math.random()*3);
-//                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-//                if (!listaDeNumeros.contains(numeroRandom2)){
-//                    listaDeNumeros.add(numeroRandom2);
-//                    System.out.println("PTM");
-//                    figura[numeroRandom2].setRutaDeImagen();
-//                    System.out.println("PTM");
-//                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
-//                    System.out.println("PTM");
-//                    figurasSeted++;
-//                }
+//    public void figurasAMostrar(){
+//        
+//        figura1.anularRutaDeImagen(lblFicha1);
+//        figura2.anularRutaDeImagen(lblFicha2);
+//        figura3.anularRutaDeImagen(lblFicha3);
+//        
+//        boolean figura1Seted = false;
+//        boolean figura2Seted = false;
+//        boolean figura3Seted = false;
+//        
+//        int figurasSeted = 0;
+//        
+//        if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
+//            int numeroRandom2 = (int) (Math.random()*3);
+//            if (!figura1Seted && numeroRandom2 == 0){
+//                figura1.setRutaDeImagen();
+//                figura1.setRutaDeImagenTo(lblFicha1);
+//                figura1Seted = true;
+//                figurasSeted++;
+//            } else if (!figura2Seted && numeroRandom2 == 1){
+//                figura2.setRutaDeImagen();
+//                figura2.setRutaDeImagenTo(lblFicha2);
+//                figura2Seted = true;
+//                figurasSeted++;
+//            } else if (!figura3Seted && numeroRandom2 == 2){
+//                figura3.setRutaDeImagen();
+//                figura3.setRutaDeImagenTo(lblFicha3);
+//                figura3Seted = true;
+//                figurasSeted++;
 //            }
-        } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
-            while (figurasSeted < 2){
-                int numeroRandom2 = (int) (Math.random()*3);
-                if (!figura1Seted && numeroRandom2 == 0){
-                    figura1.setRutaDeImagen();
-                    figura1.setRutaDeImagenTo(lblFicha1);
-                    figura1Seted = true;
-                    figurasSeted++;
-                } else if (!figura2Seted && numeroRandom2 == 1){
-                    figura2.setRutaDeImagen();
-                    figura2.setRutaDeImagenTo(lblFicha2);
-                    figura2Seted = true;
-                    figurasSeted++;
-                } else if (!figura3Seted && numeroRandom2 == 2){
-                    figura3.setRutaDeImagen();
-                    figura3.setRutaDeImagenTo(lblFicha3);
-                    figura3Seted = true;
-                    figurasSeted++;
-                }
-            }
-            
+//
+////            int numeroRandom2;
+////            while (figurasSeted < 1){
+////                numeroRandom2 = (int) (Math.random()*3);
+////                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+////                if (!listaDeNumeros.contains(numeroRandom2)){
+////                    listaDeNumeros.add(numeroRandom2);
+////                    System.out.println("PTM");
+////                    figura[numeroRandom2].setRutaDeImagen();
+////                    System.out.println("PTM");
+////                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+////                    System.out.println("PTM");
+////                    figurasSeted++;
+////                }
+////            }
+//        } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
 //            while (figurasSeted < 2){
 //                int numeroRandom2 = (int) (Math.random()*3);
-//                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-//                if (!listaDeNumeros.contains(numeroRandom2)){
-//                    listaDeNumeros.add(numeroRandom2);
-//                    figura[numeroRandom2].setRutaDeImagen();
-//                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+//                if (!figura1Seted && numeroRandom2 == 0){
+//                    figura1.setRutaDeImagen();
+//                    figura1.setRutaDeImagenTo(lblFicha1);
+//                    figura1Seted = true;
+//                    figurasSeted++;
+//                } else if (!figura2Seted && numeroRandom2 == 1){
+//                    figura2.setRutaDeImagen();
+//                    figura2.setRutaDeImagenTo(lblFicha2);
+//                    figura2Seted = true;
+//                    figurasSeted++;
+//                } else if (!figura3Seted && numeroRandom2 == 2){
+//                    figura3.setRutaDeImagen();
+//                    figura3.setRutaDeImagenTo(lblFicha3);
+//                    figura3Seted = true;
 //                    figurasSeted++;
 //                }
 //            }
-        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
-            figura1.setRutaDeImagen();
-            figura1.setRutaDeImagenTo(lblFicha1);
-            figura2.setRutaDeImagen();
-            figura2.setRutaDeImagenTo(lblFicha2);
-            figura3.setRutaDeImagen();
-            figura3.setRutaDeImagenTo(lblFicha3);
+//            
+////            while (figurasSeted < 2){
+////                int numeroRandom2 = (int) (Math.random()*3);
+////                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+////                if (!listaDeNumeros.contains(numeroRandom2)){
+////                    listaDeNumeros.add(numeroRandom2);
+////                    figura[numeroRandom2].setRutaDeImagen();
+////                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+////                    figurasSeted++;
+////                }
+////            }
+//        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
+//            figura1.setRutaDeImagen();
+//            figura1.setRutaDeImagenTo(lblFicha1);
+//            figura2.setRutaDeImagen();
+//            figura2.setRutaDeImagenTo(lblFicha2);
+//            figura3.setRutaDeImagen();
+//            figura3.setRutaDeImagenTo(lblFicha3);
 
 //            int numeroRandom2;
 //            while (figurasSeted < 3){
@@ -780,8 +780,8 @@ public class VentanaJuego extends javax.swing.JFrame {
 //                    figurasSeted++;
 //                }
 //            }
-        }
-    }
+//        }
+//    }
     
     /**
      * @param args the command line arguments
