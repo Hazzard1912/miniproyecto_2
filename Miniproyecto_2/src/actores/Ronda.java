@@ -14,9 +14,9 @@ package actores;
 
 public class Ronda {
     private int numeroDeRonda;
-    private int cantidadAciertos;
+    public static int cantidadAciertos;
     public static int puntajeTotal;
-    private static int tiempoJugado;
+    public static int tiempoJugado;
     
     
     public Ronda(){
@@ -24,14 +24,6 @@ public class Ronda {
         cantidadAciertos = 0;
         puntajeTotal = 0;
         tiempoJugado = 0;
-    }
-
-    public int getCantidadAciertos() {
-        return cantidadAciertos;
-    }
-
-    public void setCantidadAciertos(int cantidadAciertos) {
-        this.cantidadAciertos = cantidadAciertos;
     }
 
     public int getPuntajeTotal() {

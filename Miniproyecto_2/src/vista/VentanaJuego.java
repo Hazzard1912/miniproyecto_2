@@ -35,6 +35,7 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private int tiempoDeObservacion;
     private Timer contador;
+    private Timer contadorTiempoTranscurrido;
 
     private JuegoMemorable juego;
 
@@ -44,8 +45,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         rondaIniciada = false;
         rondaFinalizada = false;
         fichasClickeables = true;
-
         tiempoDeObservacion = 5;
+        
+        contadorTiempoTranscurrido = new Timer(1000, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Ronda.tiempoJugado++;
+                }
+        });
+        
         contador = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 tiempoDeObservacion--;
@@ -73,6 +80,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
 
         initComponents();
+        contadorTiempoTranscurrido.start();
         
         listaLabelsFichas = new ArrayList<>() {
             {
@@ -708,6 +716,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         String iconoComparar = figuraReto.getRutaDeImagen();
         if (icono.equals(iconoComparar)) {
             Ronda.puntajeTotal += 100;
+            Ronda.cantidadAciertos++;
         } else {
             jugador.setVidas(jugador.getVidas() - 1);
             switch (jugador.getVidas()) {
