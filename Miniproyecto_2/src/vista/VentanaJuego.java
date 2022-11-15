@@ -39,9 +39,10 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private int tiempoDeObservacion;
     private int dificultad = 1;
+    private int lblComienzo = 0;
     private Timer contador;
     private Timer contadorTiempoTranscurrido;
-    private Border border = new LineBorder(Color.BLUE,5);
+    private Border border = new LineBorder(Color.BLUE, 3);
 
     private JuegoMemorable juego;
 
@@ -133,6 +134,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         }
         figuraReto.relacionarLabel(lblFichaReto);
         juego = new JuegoMemorable(jugador, figuras, figuraReto);
+        lblFicha1.setBorder(border);
     }
 
     /**
@@ -189,6 +191,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblFichaReto = new javax.swing.JLabel();
         contenedorPpal = new javax.swing.JPanel();
         lblBackground = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -515,6 +518,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/background/ventanaJuego.png"))); // NOI18N
         contenedorPpal.add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jTextField1.setText("jTextField1");
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
+        contenedorPpal.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
+
         getContentPane().add(contenedorPpal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
@@ -663,6 +674,52 @@ public class VentanaJuego extends javax.swing.JFrame {
     private void lblFicha36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha36MouseClicked
         lblFichaXMouseClicked(figuras.get(35));
     }//GEN-LAST:event_lblFicha36MouseClicked
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        System.out.println("Tiene presionada una tecla");
+        System.out.println("Digitó una tecla : " + (char) evt.getKeyCode()
+                + " | Code : " + evt.getKeyCode());
+
+        switch (evt.getKeyCode()) {
+            case 39:
+                if (lblComienzo != 35) {
+                    listaLabelsFichas.get(lblComienzo).setBorder(null);
+                    lblComienzo++;
+                    listaLabelsFichas.get(lblComienzo).setBorder(border);
+                    break;
+                } else {
+                    break;
+                }
+            case 37:
+                if (lblComienzo != 0) {
+                    listaLabelsFichas.get(lblComienzo).setBorder(null);
+                    lblComienzo--;
+                    listaLabelsFichas.get(lblComienzo).setBorder(border);
+                    break;
+                } else {
+                    break;
+                }
+            case 40:
+                if((lblComienzo + 9) <= 35){
+                    listaLabelsFichas.get(lblComienzo).setBorder(null);
+                    lblComienzo += 9;
+                    listaLabelsFichas.get(lblComienzo).setBorder(border);
+                    break;
+                } else {
+                    break;
+                }
+            case 38:
+                if((lblComienzo - 9) >= 0){
+                    listaLabelsFichas.get(lblComienzo).setBorder(null);
+                    lblComienzo -= 9;
+                    listaLabelsFichas.get(lblComienzo).setBorder(border);
+                    break;
+                } else {
+                    break;
+                }
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * Funcion general para todos las fichas. Si se da click a una ficha y este
@@ -830,6 +887,7 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contenedorPpal;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblContador;
     private javax.swing.JLabel lblFicha1;
