@@ -5,13 +5,17 @@
 package vista;
 
 import actores.*;
+import java.awt.Color;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -37,6 +41,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private int dificultad = 1;
     private Timer contador;
     private Timer contadorTiempoTranscurrido;
+    private Border border = new LineBorder(Color.BLUE,5);
 
     private JuegoMemorable juego;
 
@@ -60,7 +65,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 lblContador.setText("|" + tiempoDeObservacion);
                 if (tiempoDeObservacion == 0) {
                     contador.stop();
-
+                    lblContador.setText("");
                     for (int i = 0; i < listaLabelsFichas.size(); i++) {
                         listaLabelsFichas.get(i).setIcon(null);
                     }
@@ -503,7 +508,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         lblContador.setForeground(new java.awt.Color(255, 0, 0));
         lblContador.setText("|"+tiempoDeObservacion);
         getContentPane().add(lblContador, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 410, 70, 70));
-        getContentPane().add(lblFichaReto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 290, 100, 170));
+        getContentPane().add(lblFichaReto, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 410, 70, 70));
 
         contenedorPpal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -717,7 +722,6 @@ public class VentanaJuego extends javax.swing.JFrame {
                     lblVida1.setIcon(new ImageIcon(getClass().getResource("/imagenes/vidas/corazonNo.png")));
             }
             finalizarOContinuarRonda(figuraX, true);
-            System.out.println(jugador.getVidas());
         } else {
             figuraX.setRutaDeImagenTo();
             String icono = figuraX.getRutaDeImagen();
@@ -737,7 +741,6 @@ public class VentanaJuego extends javax.swing.JFrame {
                         lblVida1.setIcon(new ImageIcon(getClass().getResource("/imagenes/vidas/corazonNo.png")));
                 }
                 finalizarOContinuarRonda(figuraX, true);
-                System.out.println(jugador.getVidas());
             }
         }
     }
