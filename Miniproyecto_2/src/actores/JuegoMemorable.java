@@ -18,19 +18,20 @@ import java.util.List;
 public class JuegoMemorable {
     private List<Figura> figuras = new ArrayList<>();
     
-    private Figura figura_a_encontrar;
+    private Figura figuraReto;
     private int numero_de_figuras_a_encontrar;
     private Jugador jugador;
     private Ronda ronda;
     
-    public JuegoMemorable(Jugador jugador){
+    public JuegoMemorable(Jugador jugador,List<Figura> figuras, Figura figuraReto){
         this.jugador = jugador;
+        this.figuras = figuras;
+        this.figuraReto = figuraReto;
         ronda = new Ronda();
         numero_de_figuras_a_encontrar = 0;
     }
     
-    public void contarNumeroDeFigurasAEncontrar(List<Figura> figuras, Figura figuraReto){
-        this.figuras = figuras;
+    public void contarNumeroDeFigurasAEncontrar(){
         
         
         for (int i = 0; i < figuras.size(); i++){

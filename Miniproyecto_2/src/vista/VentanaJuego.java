@@ -74,18 +74,16 @@ public class VentanaJuego extends javax.swing.JFrame {
                     figuraReto.setRutaDeImagenEspecifica(figuras.get(numeroRandom3).getRutaDeImagen());
                     System.out.println("ptm");
                     figuraReto.setRutaDeImagenTo();
-<<<<<<< HEAD
-                    juego.contarNumeroDeFigurasAEncontrar(figuras, figuraReto);
-=======
+
+                    juego.contarNumeroDeFigurasAEncontrar();
+
                     //juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
->>>>>>> e931d733195232f6239114f958d617c4a5eaf49d
+
 
                     fichasClickeables = true;
                 }
             }
         });
-        
-        juego = new JuegoMemorable(jugador);
         
                 
         initComponents();
@@ -111,10 +109,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         
         figuraReto.relacionarLabel(lblFichaReto);
         
-//        for(int i = 0; i < lblFichas.size(); i++){
-//
-//            figuras.get(i).setRutaDeImagenTo();
-//        }
+        juego = new JuegoMemorable(jugador, figuras, figuraReto);
+        
     }
 
     /**
@@ -503,148 +499,147 @@ public class VentanaJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha1MouseClicked
-        // TODO add your handling code here:
         lblFichaXMouseClicked(figuras.get(0));
     }//GEN-LAST:event_lblFicha1MouseClicked
 
     private void lblFicha2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha2MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(1));
     }//GEN-LAST:event_lblFicha2MouseClicked
 
     private void lblFicha3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha3MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(2));
     }//GEN-LAST:event_lblFicha3MouseClicked
 
     private void lblFicha4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha4MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(3));
     }//GEN-LAST:event_lblFicha4MouseClicked
 
     private void lblFicha5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha5MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(4));
     }//GEN-LAST:event_lblFicha5MouseClicked
 
     private void lblFicha6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha6MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(5));
     }//GEN-LAST:event_lblFicha6MouseClicked
 
     private void lblFicha7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha7MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(6));
     }//GEN-LAST:event_lblFicha7MouseClicked
 
     private void lblFicha8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha8MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(7));
     }//GEN-LAST:event_lblFicha8MouseClicked
 
     private void lblFicha9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha9MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(8));
     }//GEN-LAST:event_lblFicha9MouseClicked
 
     private void lblFicha10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha10MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(9));
     }//GEN-LAST:event_lblFicha10MouseClicked
 
     private void lblFicha11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha11MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(10));
     }//GEN-LAST:event_lblFicha11MouseClicked
 
     private void lblFicha12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha12MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(11));
     }//GEN-LAST:event_lblFicha12MouseClicked
 
     private void lblFicha13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha13MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(12));
     }//GEN-LAST:event_lblFicha13MouseClicked
 
     private void lblFicha14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha14MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(13));
     }//GEN-LAST:event_lblFicha14MouseClicked
 
     private void lblFicha15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha15MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(14));
     }//GEN-LAST:event_lblFicha15MouseClicked
 
     private void lblFicha16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha16MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(15));
     }//GEN-LAST:event_lblFicha16MouseClicked
 
     private void lblFicha17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha17MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(16));
     }//GEN-LAST:event_lblFicha17MouseClicked
 
     private void lblFicha18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha18MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(17));
     }//GEN-LAST:event_lblFicha18MouseClicked
 
     private void lblFicha19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha19MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(18));
     }//GEN-LAST:event_lblFicha19MouseClicked
 
     private void lblFicha20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha20MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(19));
     }//GEN-LAST:event_lblFicha20MouseClicked
 
     private void lblFicha21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha21MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(20));
     }//GEN-LAST:event_lblFicha21MouseClicked
 
     private void lblFicha22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha22MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(21));
     }//GEN-LAST:event_lblFicha22MouseClicked
 
     private void lblFicha23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha23MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(22));
     }//GEN-LAST:event_lblFicha23MouseClicked
 
     private void lblFicha24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha24MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(23));
     }//GEN-LAST:event_lblFicha24MouseClicked
 
     private void lblFicha25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha25MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(24));
     }//GEN-LAST:event_lblFicha25MouseClicked
 
     private void lblFicha26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha26MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(25));
     }//GEN-LAST:event_lblFicha26MouseClicked
 
     private void lblFicha27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha27MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(26));
     }//GEN-LAST:event_lblFicha27MouseClicked
 
     private void lblFicha28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha28MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(27));
     }//GEN-LAST:event_lblFicha28MouseClicked
 
     private void lblFicha29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha29MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(28));
     }//GEN-LAST:event_lblFicha29MouseClicked
 
     private void lblFicha30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha30MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(29));
     }//GEN-LAST:event_lblFicha30MouseClicked
 
     private void lblFicha31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha31MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(30));
     }//GEN-LAST:event_lblFicha31MouseClicked
 
     private void lblFicha32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha32MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(31));
     }//GEN-LAST:event_lblFicha32MouseClicked
 
     private void lblFicha33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha33MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(32));
     }//GEN-LAST:event_lblFicha33MouseClicked
 
     private void lblFicha34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha34MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(33));
     }//GEN-LAST:event_lblFicha34MouseClicked
 
     private void lblFicha35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha35MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(34));
     }//GEN-LAST:event_lblFicha35MouseClicked
 
     private void lblFicha36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFicha36MouseClicked
-        // TODO add your handling code here:
+        lblFichaXMouseClicked(figuras.get(35));
     }//GEN-LAST:event_lblFicha36MouseClicked
 
     /** Funcion general para todos las fichas.
@@ -725,50 +720,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
     
     // Establece que figuras y sobre que fichas se van a mostrar (Nota: cada tres rondas se muestra una figura mas). Este metodo se ejecuta cuando se inicia una ronda
-//    public void figurasAMostrar(){
-//        
-//        figura1.anularRutaDeImagen(lblFicha1);
-//        figura2.anularRutaDeImagen(lblFicha2);
-//        figura3.anularRutaDeImagen(lblFicha3);
-//        
-//        boolean figura1Seted = false;
-//        boolean figura2Seted = false;
-//        boolean figura3Seted = false;
-//        
-//        int figurasSeted = 0;
-//        
-//        if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
-//            int numeroRandom2 = (int) (Math.random()*3);
-//            if (!figura1Seted && numeroRandom2 == 0){
-//                figura1.setRutaDeImagen();
-//                figura1.setRutaDeImagenTo(lblFicha1);
-//                figura1Seted = true;
-//                figurasSeted++;
-//            } else if (!figura2Seted && numeroRandom2 == 1){
-//                figura2.setRutaDeImagen();
-//                figura2.setRutaDeImagenTo(lblFicha2);
-//                figura2Seted = true;
-//                figurasSeted++;
-//            } else if (!figura3Seted && numeroRandom2 == 2){
-//                figura3.setRutaDeImagen();
-//                figura3.setRutaDeImagenTo(lblFicha3);
-//                figura3Seted = true;
-//                figurasSeted++;
-//            }
-//
-////            int numeroRandom2;
-////            while (figurasSeted < 1){
-////                numeroRandom2 = (int) (Math.random()*3);
-////                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-////                if (!listaDeNumeros.contains(numeroRandom2)){
-////                    listaDeNumeros.add(numeroRandom2);
-////                    System.out.println("PTM");
-////                    figura[numeroRandom2].setRutaDeImagen();
-////                    System.out.println("PTM");
-////                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
-////                    System.out.println("PTM");
-////                    figurasSeted++;
-////                }
+
     public void figurasAMostrar(){
         
         for(int i = 0; i < figuras.size(); i++){
@@ -776,130 +728,44 @@ public class VentanaJuego extends javax.swing.JFrame {
             figuras.get(i).anularRutaDeImagen();
         }
         
-//        boolean figura1Seted = false;
-//        boolean figura2Seted = false;
-//        boolean figura3Seted = false;
-        
         int figurasSeted = 0;
         
         if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
-            
-            int numeroRandom2;
-            ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-            while (figurasSeted < 1){
-                numeroRandom2 = (int) (Math.random()*3);
-                
-                if (!listaDeNumeros.contains(numeroRandom2)){
-                    listaDeNumeros.add(numeroRandom2);
-                    figuras.get(numeroRandom2).setRutaDeImagen();
-                    figuras.get(numeroRandom2).setRutaDeImagenTo();
-                    System.out.println("PTM");
-                    figurasSeted++;
-                }
-            }
-            
-////            int numeroRandom2 = (int) (Math.random()*3);
-////            if (!figura1Seted && numeroRandom2 == 0){
-////                figura1.setRutaDeImagen();
-////                figura1.setRutaDeImagenTo(lblFicha1);
-////                figura1Seted = true;
-////                figurasSeted++;
-////            } else if (!figura2Seted && numeroRandom2 == 1){
-////                figura2.setRutaDeImagen();
-////                figura2.setRutaDeImagenTo(lblFicha2);
-////                figura2Seted = true;
-////                figurasSeted++;
-////            } else if (!figura3Seted && numeroRandom2 == 2){
-////                figura3.setRutaDeImagen();
-////                figura3.setRutaDeImagenTo(lblFicha3);
-////                figura3Seted = true;
-////                figurasSeted++;
-////            }
-//        } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
-//            while (figurasSeted < 2){
-//                int numeroRandom2 = (int) (Math.random()*3);
-//                if (!figura1Seted && numeroRandom2 == 0){
-//                    figura1.setRutaDeImagen();
-//                    figura1.setRutaDeImagenTo(lblFicha1);
-//                    figura1Seted = true;
-//                    figurasSeted++;
-//                } else if (!figura2Seted && numeroRandom2 == 1){
-//                    figura2.setRutaDeImagen();
-//                    figura2.setRutaDeImagenTo(lblFicha2);
-//                    figura2Seted = true;
-//                    figurasSeted++;
-//                } else if (!figura3Seted && numeroRandom2 == 2){
-//                    figura3.setRutaDeImagen();
-//                    figura3.setRutaDeImagenTo(lblFicha3);
-//                    figura3Seted = true;
-//                    figurasSeted++;
-//                }
-//            }
-//            
-////            while (figurasSeted < 2){
-////                int numeroRandom2 = (int) (Math.random()*3);
-////                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-////                if (!listaDeNumeros.contains(numeroRandom2)){
-////                    listaDeNumeros.add(numeroRandom2);
-////                    figura[numeroRandom2].setRutaDeImagen();
-////                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
-////                    figurasSeted++;
-////                }
-////            }
-//        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
-//            figura1.setRutaDeImagen();
-//            figura1.setRutaDeImagenTo(lblFicha1);
-//            figura2.setRutaDeImagen();
-//            figura2.setRutaDeImagenTo(lblFicha2);
-//            figura3.setRutaDeImagen();
-//            figura3.setRutaDeImagenTo(lblFicha3);
-
+            dificultadDeFiguras(1);
 //            int numeroRandom2;
-//            while (figurasSeted < 3){
+//            ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+//            while (figurasSeted < 1){
 //                numeroRandom2 = (int) (Math.random()*3);
-//                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+//                
 //                if (!listaDeNumeros.contains(numeroRandom2)){
 //                    listaDeNumeros.add(numeroRandom2);
-//                    figura[numeroRandom2].setRutaDeImagen();
-//                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
+//                    figuras.get(numeroRandom2).setRutaDeImagen();
+//                    figuras.get(numeroRandom2).setRutaDeImagenTo();
+//                    System.out.println("PTM");
 //                    figurasSeted++;
 //                }
 //            }
-//        }
-//    }
-//                    figurasSeted++;
-//                }
-//            }
-//            
-////            while (figurasSeted < 2){
-////                int numeroRandom2 = (int) (Math.random()*3);
-////                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-////                if (!listaDeNumeros.contains(numeroRandom2)){
-////                    listaDeNumeros.add(numeroRandom2);
-////                    figura[numeroRandom2].setRutaDeImagen();
-////                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
-////                    figurasSeted++;
-////                }
-////            }
-//        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
-//            figura1.setRutaDeImagen();
-//            figura1.setRutaDeImagenTo(lblFicha1);
-//            figura2.setRutaDeImagen();
-//            figura2.setRutaDeImagenTo(lblFicha2);
-//            figura3.setRutaDeImagen();
-//            figura3.setRutaDeImagenTo(lblFicha3);
-//
-////            int numeroRandom2;
-////            while (figurasSeted < 3){
-////                numeroRandom2 = (int) (Math.random()*3);
-////                ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-////                if (!listaDeNumeros.contains(numeroRandom2)){
-////                    listaDeNumeros.add(numeroRandom2);
-////                    figura[numeroRandom2].setRutaDeImagen();
-////                    figura[numeroRandom2].setRutaDeImagenTo(lblFicha[numeroRandom2]);
-////                    figurasSeted++;
-////                }
-////            }
+        } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
+            dificultadDeFiguras(2);
+        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
+            dificultadDeFiguras(3);
+        }
+    }
+    
+    public void dificultadDeFiguras(int nivelDeDificultad){
+        int figurasSeted=0;
+        int numeroRandom2;
+        ArrayList<Integer> listaDeNumeros = new ArrayList<>();
+        while (figurasSeted < nivelDeDificultad){
+            numeroRandom2 = (int) (figuras.size()*Math.random());
+            
+            if (!listaDeNumeros.contains(numeroRandom2)){
+                listaDeNumeros.add(numeroRandom2);
+                figuras.get(numeroRandom2).setRutaDeImagen();
+                figuras.get(numeroRandom2).setRutaDeImagenTo();
+                System.out.println("PTM");
+                figurasSeted++;
+            }
         }
     }
     /**
@@ -1015,8 +881,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel lblVida2;
     private javax.swing.JLabel lblVida3;
     // End of variables declaration//GEN-END:variables
-<<<<<<< HEAD
+
  }
-=======
-}
->>>>>>> e931d733195232f6239114f958d617c4a5eaf49d
+
+
