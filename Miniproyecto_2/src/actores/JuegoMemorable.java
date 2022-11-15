@@ -4,6 +4,9 @@
  */
 package actores;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @authors:
@@ -13,7 +16,8 @@ package actores;
  */
 
 public class JuegoMemorable {
-    private Figura[] vector_de_figuras = new Figura[3];
+    private List<Figura> figuras = new ArrayList<>();
+    
     private Figura figura_a_encontrar;
     private int numero_de_figuras_a_encontrar;
     private Jugador jugador;
@@ -25,16 +29,13 @@ public class JuegoMemorable {
         numero_de_figuras_a_encontrar = 0;
     }
     
-    public void contarNumeroDeFigurasAEncontrar(Figura figura1, Figura figura2, Figura figura3, Figura figuraReto){
-        vector_de_figuras[0] = figura1;
-        vector_de_figuras[1] = figura2;
-        vector_de_figuras[2] = figura3;
+    public void contarNumeroDeFigurasAEncontrar(List<Figura> figuras, Figura figuraReto){
+        this.figuras = figuras;
         
-        //this.figura_a_encontrar = una_figura_a_encontrar;
         
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < figuras.size(); i++){
 
-            if (vector_de_figuras[i].getRutaDeImagen() == figuraReto.getRutaDeImagen()){
+            if (figuras.get(i).getRutaDeImagen() == figuraReto.getRutaDeImagen()){
                 numero_de_figuras_a_encontrar++;
             }
         }

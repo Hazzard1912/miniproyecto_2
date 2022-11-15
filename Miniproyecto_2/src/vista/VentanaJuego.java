@@ -59,21 +59,21 @@ public class VentanaJuego extends javax.swing.JFrame {
                 {
                     contador.stop();
                     
-                    for(int i = 0; i < lblFichas.size(); i++){
-                        lblFichas.get(i).setIcon(null);
+                    for(int i = 0; i < listaLabelsFichas.size(); i++){
+                        listaLabelsFichas.get(i).setIcon(null);
                     }
                     
                     int numeroRandom3;
                     numeroRandom3 = (int) (Math.random() * (figuras.size()));
-                    
+                    System.out.println("ptm");
                     while (figuras.get(numeroRandom3).getRutaDeImagen() == null){
                         numeroRandom3 = (int) (Math.random() * (figuras.size()));
                     }
-                    while ((!figuraReto.getRutaDeImagen().equals(figuras.get(numeroRandom3).getRutaDeImagen())) || (figuraReto.getRutaDeImagen() == null)){
-                        figuraReto.setRutaDeImagen();
-                    }
+                    System.out.println("ptm");
+                    figuraReto.setRutaDeImagenEspecifica(figuras.get(numeroRandom3).getRutaDeImagen());
+                    System.out.println("ptm");
                     figuraReto.setRutaDeImagenTo();
-                    juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
+                    juego.contarNumeroDeFigurasAEncontrar(figuras, figuraReto);
 
                     fichasClickeables = true;
                 }
@@ -101,8 +101,10 @@ public class VentanaJuego extends javax.swing.JFrame {
 
             Figura figuraX = new Figura();
             figuras.add(figuraX);
-            figuras.get(i).relacionarLabel(lblFichas.get(i));
+            figuras.get(i).relacionarLabel(listaLabelsFichas.get(i));
         }
+        
+        figuraReto.relacionarLabel(lblFichaReto);
         
 //        for(int i = 0; i < lblFichas.size(); i++){
 //
@@ -672,8 +674,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         //fichasClickeables = true;
         tiempoDeObservacion = 5;
 
-        for(int i = 0; i < lblFichas.size(); i++){
-            lblFichas.get(i).setIcon(null);
+        for(int i = 0; i < listaLabelsFichas.size(); i++){
+            listaLabelsFichas.get(i).setIcon(null);
         }
         
         lblFichaReto.setIcon(null);
@@ -733,9 +735,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 
                 if (!listaDeNumeros.contains(numeroRandom2)){
                     listaDeNumeros.add(numeroRandom2);
-                    System.out.println("PTM");
                     figuras.get(numeroRandom2).setRutaDeImagen();
-                    System.out.println("PTM");
                     figuras.get(numeroRandom2).setRutaDeImagenTo();
                     System.out.println("PTM");
                     figurasSeted++;
@@ -925,11 +925,4 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel lblVida2;
     private javax.swing.JLabel lblVida3;
     // End of variables declaration//GEN-END:variables
-    private List<javax.swing.JLabel> lblFichas ;
-    
-//    private List<javax.swing.JLabel> lblFichas = new ArrayList<>() {{ 
-//    add(lblFicha1); add(lblFicha2); add(lblFicha3); add(lblFicha4); add(lblFicha5); add(lblFicha6); add(lblFicha7); add(lblFicha8); add(lblFicha9); add(lblFicha10);
-//    add(lblFicha11); add(lblFicha12); add(lblFicha13); add(lblFicha14); add(lblFicha15); add(lblFicha16); add(lblFicha17);
-//    add(lblFicha18); add(lblFicha19); add(lblFicha20); add(lblFicha21); add(lblFicha22); add(lblFicha23);    add(lblFicha24); add(lblFicha25); add(lblFicha26); add(lblFicha27); add(lblFicha28); add(lblFicha29); add(lblFicha30);
-//    add(lblFicha31); add(lblFicha32); add(lblFicha33); add(lblFicha34); add(lblFicha35); add(lblFicha36);}};
-}
+ }

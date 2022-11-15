@@ -100,4 +100,13 @@ public class Figura {
         public void relacionarLabel(javax.swing.JLabel lblFichaX) {
         this.lblFichaX = lblFichaX;
     }
+        
+        public void setRutaDeImagenEspecifica(String rutaDeImagenEspecifica) {
+        if (setRutaDeImagenSinUsar == true) {
+            setRutaDeImagenSinUsar = false;
+        }
+        rutaDeImagen = rutaDeImagenEspecifica;
+
+        figuraObservada = false;
+    }
 }
