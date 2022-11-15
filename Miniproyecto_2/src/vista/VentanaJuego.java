@@ -718,6 +718,8 @@ public class VentanaJuego extends javax.swing.JFrame {
                 } else {
                     break;
                 }
+            case 10: case 32:
+                lblFichaXMouseClicked(figuras.get(lblComienzo));
         }
     }//GEN-LAST:event_jTextField1KeyPressed
 
