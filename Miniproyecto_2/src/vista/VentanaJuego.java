@@ -25,7 +25,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Ronda ronda;
     public static Jugador jugador = new Jugador();
     private Figura figuraReto;
-    
+
     private List<javax.swing.JLabel> listaLabelsFichas;
     private List<Figura> figuras = new ArrayList<>();
 
@@ -47,13 +47,13 @@ public class VentanaJuego extends javax.swing.JFrame {
         rondaFinalizada = false;
         fichasClickeables = true;
         tiempoDeObservacion = 5;
-        
+
         contadorTiempoTranscurrido = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Ronda.tiempoJugado++;
-                }
+            }
         });
-        
+
         contador = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 tiempoDeObservacion--;
@@ -78,7 +78,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         initComponents();
         contadorTiempoTranscurrido.start();
-        
+
         listaLabelsFichas = new ArrayList<>() {
             {
                 add(lblFicha1);
@@ -673,7 +673,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 fichasClickeables = false;
                 iniciarRonda();
             } else {
-                if (!figuraX.getFiguraObservada() && figuraX.getRutaDeImagen() != null) {
+                if (!figuraX.getFiguraObservada() || figuraX.getRutaDeImagen() != null) {
                     figuraX.observarFigura();
                     mostrarFichaYCompararFigura(figuraX);
                     finalizarOContinuarRonda(figuraX, false);
@@ -705,13 +705,7 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     // Muestra la figura que contiene la ficha y compara si es la que se esta pidiendo. Este metodo se ejecuta cuando se le da click a una ficha despues de terminado el contador
     public void mostrarFichaYCompararFigura(Figura figuraX) {
-        figuraX.setRutaDeImagenTo();
-        String icono = figuraX.getRutaDeImagen();
-        String iconoComparar = figuraReto.getRutaDeImagen();
-        if (icono.equals(iconoComparar)) {
-            Ronda.puntajeTotal += 100;
-            Ronda.cantidadAciertos++;
-        } else {
+        if (figuraX.getRutaDeImagen() == null) {
             juego.setNumero_de_figuras_a_encontrar(0);
             jugador.setVidas(jugador.getVidas() - 1);
             switch (jugador.getVidas()) {
@@ -724,14 +718,35 @@ public class VentanaJuego extends javax.swing.JFrame {
             }
             finalizarOContinuarRonda(figuraX, true);
             System.out.println(jugador.getVidas());
+        } else {
+            figuraX.setRutaDeImagenTo();
+            String icono = figuraX.getRutaDeImagen();
+            String iconoComparar = figuraReto.getRutaDeImagen();
+            if (icono.equals(iconoComparar)) {
+                Ronda.puntajeTotal += 100;
+                Ronda.cantidadAciertos++;
+            } else {
+                juego.setNumero_de_figuras_a_encontrar(0);
+                jugador.setVidas(jugador.getVidas() - 1);
+                switch (jugador.getVidas()) {
+                    case 2 ->
+                        lblVida3.setIcon(new ImageIcon(getClass().getResource("/imagenes/vidas/corazonNo.png")));
+                    case 1 ->
+                        lblVida2.setIcon(new ImageIcon(getClass().getResource("/imagenes/vidas/corazonNo.png")));
+                    case 0 ->
+                        lblVida1.setIcon(new ImageIcon(getClass().getResource("/imagenes/vidas/corazonNo.png")));
+                }
+                finalizarOContinuarRonda(figuraX, true);
+                System.out.println(jugador.getVidas());
+            }
         }
     }
 
     // Finaliza una ronda si ya se encontraron todas las fichas con la descripcion dada. Este metodo se ejecuta cuando se le da click a una ficha despues de terminado el contador
     public void finalizarOContinuarRonda(Figura figuraX, boolean x) {
         rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX, figuraReto);
-        if(x){
-            if(jugador.getVidas() == 0){
+        if (x) {
+            if (jugador.getVidas() == 0) {
                 System.out.println("esto deberia ejecutarse ya");
                 VentanaEstadisticas ventanaEstadisticas = new VentanaEstadisticas();
                 ventanaEstadisticas.setVisible(true);
@@ -739,10 +754,10 @@ public class VentanaJuego extends javax.swing.JFrame {
             }
             rondaFinalizada = true;
             establecerElementosComoDeInicioDeRonda();
-        }else if (rondaFinalizada == true) {
+        } else if (rondaFinalizada == true) {
             System.out.println("esto se esta ejecutando");
             establecerElementosComoDeInicioDeRonda();
-        } 
+        }
     }
 
     // Establece que figuras y sobre que fichas se van a mostrar (Nota: cada tres rondas se muestra una figura mas). Este metodo se ejecuta cuando se inicia una ronda
@@ -752,7 +767,7 @@ public class VentanaJuego extends javax.swing.JFrame {
             figuras.get(i).anularRutaDeImagen();
         }
 
-        if(ronda.getNumeroDeRonda() % 3 == 0){
+        if (ronda.getNumeroDeRonda() % 3 == 0) {
             dificultad++;
         }
         dificultadDeFiguras(dificultad);
