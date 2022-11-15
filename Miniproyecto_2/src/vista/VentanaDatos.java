@@ -34,9 +34,12 @@ public class VentanaDatos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(800, 500));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ingresoNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N

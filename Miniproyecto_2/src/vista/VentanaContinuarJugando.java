@@ -33,6 +33,9 @@ public class VentanaContinuarJugando extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 204));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         deseaContinuarJugando.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 22)); // NOI18N
         deseaContinuarJugando.setForeground(new java.awt.Color(0, 102, 51));
@@ -94,7 +97,7 @@ public class VentanaContinuarJugando extends javax.swing.JFrame {
         VentanaInicio newframe = new VentanaInicio();
 
         newframe.setVisible(true);
-
+        
         this.dispose();
 
     }//GEN-LAST:event_siContinuarActionPerformed

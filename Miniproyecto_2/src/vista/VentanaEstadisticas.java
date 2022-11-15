@@ -31,6 +31,9 @@ public class VentanaEstadisticas extends javax.swing.JFrame {
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -55,6 +58,7 @@ public class VentanaEstadisticas extends javax.swing.JFrame {
         // TODO add your handling code here:
         VentanaContinuarJugando ventanaContinuarJugando = new VentanaContinuarJugando();
         ventanaContinuarJugando.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSiguienteMouseClicked
 
     /**
