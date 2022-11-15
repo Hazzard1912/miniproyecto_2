@@ -71,7 +71,7 @@ public class Figura {
     }
 
     // Hace que el label relacionado con lafigura muestre en pantalla la imagen (circulo, cuadrado, etc). Este metodo se ejecuta cuando se da click a una ficha despues de finalizado el contador
-    public void setRutaDeImagenTo(javax.swing.JLabel labelX) {
+    public void setRutaDeImagenTo() {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagen();
         }
@@ -89,7 +89,7 @@ public class Figura {
     }
 
     // Quita cualquier imagen que tenga a la figura. Este metodo se ejecuta cuando se establece que figuras se van a mostrar y cuales no.
-    public void anularRutaDeImagen(javax.swing.JLabel labelX) {
+    public void anularRutaDeImagen() {
         if (setRutaDeImagenSinUsar == true) {
             setRutaDeImagenSinUsar = false;
         }
