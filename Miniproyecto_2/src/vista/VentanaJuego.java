@@ -25,7 +25,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private Ronda ronda;
     public static Jugador jugador = new Jugador();
     private Figura figuraReto;
-
+    
     private List<javax.swing.JLabel> listaLabelsFichas;
     private List<Figura> figuras = new ArrayList<>();
 
@@ -34,6 +34,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     private boolean fichasClickeables;
 
     private int tiempoDeObservacion;
+    private int dificultad = 1;
     private Timer contador;
     private Timer contadorTiempoTranscurrido;
 
@@ -70,15 +71,11 @@ public class VentanaJuego extends javax.swing.JFrame {
                     }
                     figuraReto.setRutaDeImagenEspecifica(figuras.get(numeroRandom3).getRutaDeImagen());
                     figuraReto.setRutaDeImagenTo();
-
                     juego.contarNumeroDeFigurasAEncontrar();
-
-                    //juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
                     fichasClickeables = true;
                 }
             }
         });
-
         initComponents();
         contadorTiempoTranscurrido.start();
         
@@ -129,11 +126,8 @@ public class VentanaJuego extends javax.swing.JFrame {
             figuras.add(figuraX);
             figuras.get(i).relacionarLabel(listaLabelsFichas.get(i));
         }
-
         figuraReto.relacionarLabel(lblFichaReto);
-
         juego = new JuegoMemorable(jugador, figuras, figuraReto);
-
     }
 
     /**
@@ -718,6 +712,7 @@ public class VentanaJuego extends javax.swing.JFrame {
             Ronda.puntajeTotal += 100;
             Ronda.cantidadAciertos++;
         } else {
+            juego.setNumero_de_figuras_a_encontrar(0);
             jugador.setVidas(jugador.getVidas() - 1);
             switch (jugador.getVidas()) {
                 case 2 ->
@@ -728,23 +723,26 @@ public class VentanaJuego extends javax.swing.JFrame {
                     lblVida1.setIcon(new ImageIcon(getClass().getResource("/imagenes/vidas/corazonNo.png")));
             }
             finalizarOContinuarRonda(figuraX, true);
+            System.out.println(jugador.getVidas());
         }
     }
 
     // Finaliza una ronda si ya se encontraron todas las fichas con la descripcion dada. Este metodo se ejecuta cuando se le da click a una ficha despues de terminado el contador
     public void finalizarOContinuarRonda(Figura figuraX, boolean x) {
         rondaFinalizada = juego.todasLasFichasSeleccionadas(figuraX, figuraReto);
-        if (rondaFinalizada == true) {
-            establecerElementosComoDeInicioDeRonda();
-        } else if(x){
+        if(x){
             if(jugador.getVidas() == 0){
+                System.out.println("esto deberia ejecutarse ya");
                 VentanaEstadisticas ventanaEstadisticas = new VentanaEstadisticas();
                 ventanaEstadisticas.setVisible(true);
                 dispose();
             }
             rondaFinalizada = true;
             establecerElementosComoDeInicioDeRonda();
-        }
+        }else if (rondaFinalizada == true) {
+            System.out.println("esto se esta ejecutando");
+            establecerElementosComoDeInicioDeRonda();
+        } 
     }
 
     // Establece que figuras y sobre que fichas se van a mostrar (Nota: cada tres rondas se muestra una figura mas). Este metodo se ejecuta cuando se inicia una ronda
@@ -754,28 +752,10 @@ public class VentanaJuego extends javax.swing.JFrame {
             figuras.get(i).anularRutaDeImagen();
         }
 
-        int figurasSeted = 0;
-
-        if ((ronda.getNumeroDeRonda() >= 1) && (ronda.getNumeroDeRonda() < 4)) {
-            dificultadDeFiguras(1);
-//            int numeroRandom2;
-//            ArrayList<Integer> listaDeNumeros = new ArrayList<>();
-//            while (figurasSeted < 1){
-//                numeroRandom2 = (int) (Math.random()*3);
-//                
-//                if (!listaDeNumeros.contains(numeroRandom2)){
-//                    listaDeNumeros.add(numeroRandom2);
-//                    figuras.get(numeroRandom2).setRutaDeImagen();
-//                    figuras.get(numeroRandom2).setRutaDeImagenTo();
-//                    System.out.println("PTM");
-//                    figurasSeted++;
-//                }
-//            }
-        } else if ((ronda.getNumeroDeRonda() >= 4) && (ronda.getNumeroDeRonda() < 7)) {
-            dificultadDeFiguras(2);
-        } else if ((ronda.getNumeroDeRonda() >= 7) && (ronda.getNumeroDeRonda() < 10)) {
-            dificultadDeFiguras(3);
+        if(ronda.getNumeroDeRonda() % 3 == 0){
+            dificultad++;
         }
+        dificultadDeFiguras(dificultad);
     }
 
     public void dificultadDeFiguras(int nivelDeDificultad) {

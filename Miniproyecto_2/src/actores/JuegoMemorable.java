@@ -30,6 +30,10 @@ public class JuegoMemorable {
         ronda = new Ronda();
         numero_de_figuras_a_encontrar = 0;
     }
+
+    public void setNumero_de_figuras_a_encontrar(int numero_de_figuras_a_encontrar) {
+        this.numero_de_figuras_a_encontrar = numero_de_figuras_a_encontrar;
+    }
     
     public void contarNumeroDeFigurasAEncontrar(){
         
