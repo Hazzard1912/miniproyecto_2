@@ -66,19 +66,15 @@ public class VentanaJuego extends javax.swing.JFrame {
                     
                     int numeroRandom3;
                     numeroRandom3 = (int) (Math.random() * (figuras.size()));
-                    System.out.println("ptm");
+                    
                     while (figuras.get(numeroRandom3).getRutaDeImagen() == null){
                         numeroRandom3 = (int) (Math.random() * (figuras.size()));
                     }
-                    System.out.println("ptm");
-                    figuraReto.setRutaDeImagenEspecifica(figuras.get(numeroRandom3).getRutaDeImagen());
-                    System.out.println("ptm");
+                    while ((!figuraReto.getRutaDeImagen().equals(figuras.get(numeroRandom3).getRutaDeImagen())) || (figuraReto.getRutaDeImagen() == null)){
+                        figuraReto.setRutaDeImagen();
+                    }
                     figuraReto.setRutaDeImagenTo();
-<<<<<<< HEAD
-                    juego.contarNumeroDeFigurasAEncontrar(figuras, figuraReto);
-=======
                     //juego.contarNumeroDeFigurasAEncontrar(figura1, figura2, figura3, figuraReto);
->>>>>>> e931d733195232f6239114f958d617c4a5eaf49d
 
                     fichasClickeables = true;
                 }
@@ -108,8 +104,6 @@ public class VentanaJuego extends javax.swing.JFrame {
             figuras.add(figuraX);
             figuras.get(i).relacionarLabel(listaLabelsFichas.get(i));
         }
-        
-        figuraReto.relacionarLabel(lblFichaReto);
         
 //        for(int i = 0; i < lblFichas.size(); i++){
 //
@@ -791,7 +785,9 @@ public class VentanaJuego extends javax.swing.JFrame {
                 
                 if (!listaDeNumeros.contains(numeroRandom2)){
                     listaDeNumeros.add(numeroRandom2);
+                    System.out.println("PTM");
                     figuras.get(numeroRandom2).setRutaDeImagen();
+                    System.out.println("PTM");
                     figuras.get(numeroRandom2).setRutaDeImagenTo();
                     System.out.println("PTM");
                     figurasSeted++;
@@ -1015,8 +1011,4 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JLabel lblVida2;
     private javax.swing.JLabel lblVida3;
     // End of variables declaration//GEN-END:variables
-<<<<<<< HEAD
- }
-=======
 }
->>>>>>> e931d733195232f6239114f958d617c4a5eaf49d

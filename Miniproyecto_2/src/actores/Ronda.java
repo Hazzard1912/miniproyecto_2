@@ -14,10 +14,9 @@ package actores;
 
 public class Ronda {
     private int numeroDeRonda;
-    
     private int cantidadAciertos;
-    private int puntajeTotal;
-    private int tiempoJugado;
+    public static int puntajeTotal;
+    private static int tiempoJugado;
     
     
     public Ronda(){
