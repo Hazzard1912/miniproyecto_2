@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import javax.swing.border.Border;
@@ -677,49 +676,40 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
         // TODO add your handling code here:
-        System.out.println("Tiene presionada una tecla");
-        System.out.println("Digitó una tecla : " + (char) evt.getKeyCode()
-                + " | Code : " + evt.getKeyCode());
-
         switch (evt.getKeyCode()) {
-            case 39:
+            case 39 -> {
                 if (lblComienzo != 35) {
                     listaLabelsFichas.get(lblComienzo).setBorder(null);
                     lblComienzo++;
                     listaLabelsFichas.get(lblComienzo).setBorder(border);
-                    break;
                 } else {
-                    break;
                 }
-            case 37:
+            }
+            case 37 -> {
                 if (lblComienzo != 0) {
                     listaLabelsFichas.get(lblComienzo).setBorder(null);
                     lblComienzo--;
                     listaLabelsFichas.get(lblComienzo).setBorder(border);
-                    break;
                 } else {
-                    break;
                 }
-            case 40:
-                if((lblComienzo + 9) <= 35){
+            }
+            case 40 -> {
+                if ((lblComienzo + 9) <= 35) {
                     listaLabelsFichas.get(lblComienzo).setBorder(null);
                     lblComienzo += 9;
                     listaLabelsFichas.get(lblComienzo).setBorder(border);
-                    break;
                 } else {
-                    break;
                 }
-            case 38:
-                if((lblComienzo - 9) >= 0){
+            }
+            case 38 -> {
+                if ((lblComienzo - 9) >= 0) {
                     listaLabelsFichas.get(lblComienzo).setBorder(null);
                     lblComienzo -= 9;
                     listaLabelsFichas.get(lblComienzo).setBorder(border);
-                    break;
                 } else {
-                    break;
                 }
-            case 10: case 32:
-                lblFichaXMouseClicked(figuras.get(lblComienzo));
+            }
+            case 10, 32 -> lblFichaXMouseClicked(figuras.get(lblComienzo));
         }
     }//GEN-LAST:event_jTextField1KeyPressed
 
@@ -828,7 +818,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         for (int i = 0; i < figuras.size(); i++) {
             figuras.get(i).anularRutaDeImagen();
         }
-
         if (ronda.getNumeroDeRonda() % 3 == 0) {
             dificultad++;
         }
