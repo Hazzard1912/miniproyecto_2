@@ -28,6 +28,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     public static Jugador jugador = new Jugador();
     private Figura figuraReto;
 
+    private List<javax.swing.JLabel> listaLabelsFichas;
     private List<Figura> figuras = new ArrayList<>();
     
     private boolean rondaIniciada; 
@@ -83,8 +84,9 @@ public class VentanaJuego extends javax.swing.JFrame {
         
                 
         initComponents();
+
         
-        lblFichas = new ArrayList<>() {{ 
+        listaLabelsFichas = new ArrayList<>() {{ 
         add(lblFicha1); add(lblFicha2); add(lblFicha3); add(lblFicha4); add(lblFicha5); 
         add(lblFicha6); add(lblFicha7); add(lblFicha8); add(lblFicha9); add(lblFicha10);
         add(lblFicha11); add(lblFicha12); add(lblFicha13); add(lblFicha14); add(lblFicha15); 
@@ -94,7 +96,9 @@ public class VentanaJuego extends javax.swing.JFrame {
         add(lblFicha31); add(lblFicha32); add(lblFicha33); add(lblFicha34); add(lblFicha35); 
         add(lblFicha36);}};
         
-        for(int i = 0; i < lblFichas.size(); i++){
+
+        for(int i = 0; i < listaLabelsFichas.size(); i++){
+
             Figura figuraX = new Figura();
             figuras.add(figuraX);
             figuras.get(i).relacionarLabel(lblFichas.get(i));
