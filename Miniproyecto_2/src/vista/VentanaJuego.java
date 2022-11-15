@@ -83,7 +83,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         initComponents();
         contadorTiempoTranscurrido.start();
-
+        jugador.setVidas(3);
         listaLabelsFichas = new ArrayList<>() {
             {
                 add(lblFicha1);
