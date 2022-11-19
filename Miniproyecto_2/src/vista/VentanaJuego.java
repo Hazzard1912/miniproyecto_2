@@ -18,7 +18,10 @@ import javax.swing.border.LineBorder;
 
 /**
  *
- * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
+* @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaJuego extends javax.swing.JFrame {
 

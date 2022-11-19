@@ -12,7 +12,10 @@ import javax.swing.JLabel;
 
 /**
  *
- * @authors: Jhonnier Hernandez Juan Cifuentes Alejandra Carvajal
+ * @authors: 
+ * Jhonnier Hernandez 
+ * Juan Cifuentes 
+ * Alejandra Carvajal
  */
 public class Figura {
     
@@ -30,28 +33,9 @@ public class Figura {
     
     private javax.swing.JLabel lblFichaX;
 
-    private String forma;
-    private String color;
-
     public Figura() {
         setRutaDeImagenSinUsar = true;
         figuraObservada = false;
-    }
-
-    public String getForma() {
-        return forma;
-    }
-
-    public void setForma(String forma) {
-        this.forma = forma;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     // Cambia la ruta de la imagen. Este metodo se ejecuta cuando se inicia una ronda

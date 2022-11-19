@@ -8,7 +8,10 @@ import actores.Ronda;
 
 /**
  *
- * @author PC
+ * @authors:
+ * Jhonnier Hernandez
+ * Juan Cifuentes
+ * Alejandra Carvajal
  */
 public class VentanaEstadisticas extends javax.swing.JFrame {
 
